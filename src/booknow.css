@@ -1,0 +1,50 @@
+:root {
+    --primary-colour: rgb(239, 170, 196);
+    --secondary-colour: #333;
+    --support-colour: #d4dccd;
+    --dark-colour: #6b717e;
+    --light-colour: #fff;
+  }
+.white {
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+.bodystyle{
+    background-color: blue;
+}
+.unilink{
+    background-color: var(--support-colour);
+    padding: 0.6rem 0.3rem;
+    margin: -10px 0;
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+}
+.unilink a{
+    color: var(--light-colour);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.total{
+    background-color: var(--support-colour);
+    color: var(--secondary-colour);
+    position: absolute;
+    top: 0.5rem;
+    left: 550px;
+    margin: -13px 0;
+    width: 230px;
+    height: 300px;
+    padding: 1.3rem 0.8rem;
+}
+.words{
+    border-bottom: 1px solid var(--light-colour);
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+}
