@@ -1,28 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 :root {
     --primary-colour: rgb(239, 170, 196);
     --secondary-colour: #333;
     --support-colour: #d4dccd;
     --dark-colour: #6b717e;
     --light-colour: #fff;
+    --shadow:  0 1px 5px #757575b3;
+  }
+  *{
+      font-family:'Pattaya';
   }
 .white {
     background-color: #333;
     color: white;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.what{
+    margin-bottom: 100px;
 }
 .bodystyle{
-    background-color: blue;
+    background-color: #dddddd;
+    /* height: 100vh; */
 }
 .unilink{
-    background-color: var(--support-colour);
-    padding: 0.6rem 0.3rem;
+    background-color: var(--light-colour);
+    padding: 0.6rem 0.5rem;
     margin: -10px 0;
     position: absolute;
     border-radius: 20px;
     top: 0;
+    box-shadow: var(--shadow);
 }
 .unilink a{
-    color: var(--light-colour);
+    color: var(--secondary-colour);
 }
 .navbar{
     display: flex;
@@ -30,15 +42,16 @@
     position: relative;
 }
 .total{
-    background-color: var(--support-colour);
+    background-color: var(--light-colour);
     color: var(--secondary-colour);
     position: absolute;
     top: 0.5rem;
     left: 550px;
     margin: -13px 0;
     width: 230px;
-    height: 300px;
+    /* height: 300px; */
     padding: 1.3rem 0.8rem;
+    border-radius: 10px;
 }
 .words{
     border-bottom: 1px solid var(--light-colour);
@@ -47,4 +60,82 @@
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 0;
+}
+
+.option1{
+    background-color: var(--light-colour);
+    width: 45%;
+    color: var(--secondary-colour);
+    padding: 1.2rem 0.6rem;
+    border-bottom: 2px solid #ddd;
+    box-shadow: var(--shadow);
+    transition: 2s ease;
+}
+.option1.opt{
+    border-radius: 20px 20px 0px 0px;
+}
+.option1:last-child{
+    border-radius: 0px 0px 20px 20px;
+}
+.service{
+   display: grid;
+   grid-template-columns: 1fr 9fr;
+}
+.service input[type=checkbox]{
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin:0;
+    border-radius: 50%;
+}
+.item{
+    border-bottom: 1px solid #ddd;
+}
+.sum{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0.3rem;
+    margin-top: 1rem;
+}
+.service label{
+    
+    font-size: 1.7rem;
+}
+.option1 p{
+    margin-left: 2.8rem;
+}
+.under{
+    border-bottom: 3px solid var(--secondary-colour);
+}
+.service .in{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn{
+    margin: 0 1.2rem;
+}
+@media screen and (max-width: 700px){
+    .option1{
+        width: 100%;
+    }
+    .options{
+        margin-top: 100px;
+        padding-top: 2.5rem;
+    }
+    .total{
+        left: 180px;
+        top: 70px;
+        bottom: 0px;
+        padding: 0.2rem 0;
+       margin-top: 0;
+    }
+    .total .words, .total .item{
+        display: none;
+    }
+    .sum{
+        text-align: center;
+        padding: none;
+    }
 }

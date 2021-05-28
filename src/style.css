@@ -32,6 +32,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem 0.3rem;
 }
 .header-inner3 h1 a {
   color: var(--secondary-colour);
@@ -78,6 +79,7 @@ img {
 .button:hover {
   background-color: var(--dark-colour);
   color: var(--light-colour);
+  border: none;
 }
 /* Portfolio */
 .portfolio {
@@ -88,6 +90,7 @@ img {
 }
 .box-one {
   height: 500px;
+  width: 100%;
   background-image: url(./images/show1.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -171,7 +174,7 @@ img {
 }
 
 /* Hamburger */
-.bars {
+.bars3 {
   background: none;
   width: 30px;
   border: none;
@@ -181,7 +184,7 @@ img {
   z-index: 1002;
   display: none;
 }
-.bars span {
+.bars3 span {
   display: block;
   height: 3px;
   background-color: var(--secondary-colour);
@@ -198,12 +201,24 @@ img {
   transition: ease 0.4s;
 }
 @media screen and (max-width: 1024px) {
-  .links a {
-    font-size: 0.9rem;
-    margin: 0 15px;
+  .links5 .a,
+  .links1 .a,
+  .links2 .a,
+  .links3 .a,
+  .links4 .a {
+    font-size: 0.9rem !important;
+    margin: 0 15px !important;
   }
 }
 @media screen and (max-width: 700px) {
+  .links5 .a,
+  .links1 .a,
+  .links2 .a,
+  .links3 .a,
+  .links4 .a {
+    font-size: 0.9rem !important;
+    margin: 0 15px !important;
+  }
   .active {
     border: none;
   }
@@ -230,42 +245,42 @@ img {
   .showcase-text p {
     font-size: 1.5rem;
   }
-  .links {
+  .links3 {
     height: 100vh;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5) !important;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -110%;
     padding: 80px 120px !important;
     z-index: 1001;
     transition: 0.3s linear;
   }
-  .bars {
+  .bars3 {
     display: block;
     margin-left: 50%;
   }
-  .links a {
+  .links3 a {
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--secondary-colour);
     text-align: center;
   }
-  .links.active {
+  .links3.active {
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
-  .bars.active span:nth-child(1) {
+  .bars3.active span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
   }
-  .bars.active span:nth-child(2) {
+  .bars3.active span:nth-child(2) {
     opacity: 0;
   }
-  .bars.active span:nth-child(3) {
+  .bars3.active span:nth-child(3) {
     transform: rotate(45deg);
     bottom: 14px;
   }
@@ -273,7 +288,7 @@ img {
 @media screen and (max-width: 300px) {
   .padding {
     padding-top: 10px;
-    padding-left:g 3px;
+    padding-left: 3px;
     padding-right: 5px;
   }
 }

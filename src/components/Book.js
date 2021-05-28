@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-const BookNow = () => {
+const Book = () => {
+  
   // For Page Change
   const [count, setCount] = useState(1);
+
+  // TO Add TO List
+  const [check, setCheck] = useState([]);
+
+  // const service = e => {
+  //   let name = check
+  //   name.push(e.target.value)
+  //   setCheck(name)
+  //   console.log(check);
+  // }
 
   return (
     <div>
       <div className="bodystyle">
         <form>
-          {count === 1 ? (
+          {count == 1 ? (
             <div>
               {/* Navbar */}
               <div className="what">
@@ -29,6 +40,7 @@ const BookNow = () => {
                           className="btn btn-secondary"
                           onClick={() => setCount(count + 1)}
                           disabled={count > 3}
+                          disabled={check === []}
                         >
                           <i class="fas fa-arrow-right"></i>
                         </button>
@@ -65,7 +77,7 @@ const BookNow = () => {
                           </div>
                           <div className="item">
                             <div className="one">
-                              <h4>ll</h4>
+                              <h4>{check}</h4>
                               <p>jnd</p>
                             </div>
                             <div className="two">
@@ -96,7 +108,13 @@ const BookNow = () => {
                       <h1>Featured</h1>
                       <div className="option1 opt">
                         <div className="service">
-                          <input type="checkbox" value="Gel Manicure" />
+                          <input
+                            type="checkbox"
+                            value="Gel Manicure"
+
+                            // checked={check}
+                            // onChange={e => setCheck(e.target.checked)}
+                          />
                           <div className="in">
                             <label htmlFor="gel-manicure">Gel Manicure</label>
                             <h5>$35</h5>
@@ -546,7 +564,7 @@ const BookNow = () => {
               </div>
             </div>
           ) : null}
-          {count === 2 ? (
+          {count == 2 ? (
             <div>
               <span>Step {count} Of 4</span>
               <button
@@ -566,7 +584,7 @@ const BookNow = () => {
               </button>
             </div>
           ) : null}
-          {count === 3 ? (
+          {count == 3 ? (
             <div>
               <span>Step {count} Of 4</span>
               <button
@@ -586,7 +604,7 @@ const BookNow = () => {
               </button>
             </div>
           ) : null}
-          {count === 4 ? (
+          {count == 4 ? (
             <div>
               <span>Step {count} Of 4</span>
               <button
@@ -606,7 +624,7 @@ const BookNow = () => {
               </button>
             </div>
           ) : null}
-          {count === 4 ? (
+          {count == 4 ? (
             <input type="submit" className="btn btn-secondary" value="Submit" />
           ) : null}
         </form>
@@ -615,4 +633,4 @@ const BookNow = () => {
   );
 };
 
-export default BookNow;
+export default Book;

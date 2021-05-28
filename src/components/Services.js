@@ -10,7 +10,7 @@ const Services = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
-          <div className="bars">
+          <div className="bars4">
             <span></span>
             <span></span>
             <span></span>
@@ -18,24 +18,24 @@ const Services = () => {
           <nav>
             <ul className="links4">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className='a'>Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" className='a'>About Us</Link>
               </li>
               <li>
-                <Link to="about">Contact</Link>
+                <Link to="about" className='a'>Contact</Link>
               </li>
               <li>
-                <Link to="/services" className="active mt-3">
+                <Link to="/services" className="active mt-3 a">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/spa">Spa</Link>
+                <Link to="/spa" className='a'>Spa</Link>
               </li>
               <li>
-                <Link to="/booknow" target='_blank'>Book Now</Link>
+                <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
               </li>
             </ul>
           </nav>

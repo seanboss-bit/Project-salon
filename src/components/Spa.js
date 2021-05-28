@@ -18,7 +18,7 @@ const Spa = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
-          <div className="bars">
+          <div className="bars5">
             <span></span>
             <span></span>
             <span></span>
@@ -26,24 +26,24 @@ const Spa = () => {
           <nav>
             <ul className="links5">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className='a'>Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" className='a'>About Us</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" className='a'>Contact</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/services" className='a'>Services</Link>
               </li>
               <li>
-                <Link to="/spa" className="active5 mt-3">
+                <Link to="/spa" className="active5 mt-3 a">
                   Spa
                 </Link>
               </li>
               <li>
-                <Link to="/booknow" target='_blank'>Book Now</Link>
+                <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
               </li>
             </ul>
           </nav>

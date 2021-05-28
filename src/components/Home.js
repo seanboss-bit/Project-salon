@@ -16,7 +16,7 @@ const Home = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
-          <div className="bars">
+          <div className="bars3">
             <span></span>
             <span></span>
             <span></span>
@@ -24,24 +24,27 @@ const Home = () => {
           <nav>
             <ul className="links3">
               <li>
-                <Link to="/" className="active3">
+                <Link to="/" className="active3 a">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" className='a'>About Us</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" className='a'>Contact</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/services" className='a'>Services</Link>
               </li>
               <li>
-                <Link to="/spa">Spa</Link>
+                <Link to="/spa" className='a'>Spa</Link>
               </li>
               <li>
-                <Link to="/booknow" target='_blank'>Book Now</Link>
+                <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
+              </li>
+              <li>
+                <Link to="/book" target='_blank' className='a'>Book</Link>
               </li>
             </ul>
           </nav>

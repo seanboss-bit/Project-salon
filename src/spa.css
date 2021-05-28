@@ -33,6 +33,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem 0.3rem;
 }
 .header-inner5 h1 a {
   color: var(--dark-colour);
@@ -109,7 +110,7 @@ img {
   transition: ease 0.4s;
 }
 /* Hamburger */
-.bars {
+.bars5 {
   background: none;
   width: 30px;
   border: none;
@@ -119,7 +120,7 @@ img {
   z-index: 1002;
   display: none;
 }
-.bars span {
+.bars5 span {
   display: block;
   height: 3px;
   background-color: var(--dark-colour);
@@ -128,12 +129,13 @@ img {
   transition: 0.3s linear;
 }
 @media screen and (max-width: 1024px) {
-  .links a {
+  .links5,.links1,.links2,.links3,.links4 a {
     font-size: 0.9rem;
     margin: 0 15px;
   }
 }
 @media screen and (max-width: 700px) {
+  
   .active {
     border: none;
   }
@@ -155,7 +157,7 @@ img {
   .showcase-text p {
     font-size: 1.5rem;
   }
-  .links {
+  .links5 {
     height: 100vh;
     width: 100%;
     background-color: rgba(10, 10, 10, 0.5) !important;
@@ -166,32 +168,32 @@ img {
     z-index: 1001;
     transition: 0.3s linear;
   }
-  .bars {
+  .bars5 {
     display: block;
     margin-left: 50%;
   }
-  .links a {
+  .links5 a {
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--light-colour);
     text-align: center;
   }
-  .links.active {
+  .links5.active {
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
-  .bars.active span:nth-child(1) {
+  .bars5.active span:nth-child(1) {
     transform: rotate(-45deg);
     color: var(--light-colour) !important;
     top: 4px;
   }
-  .bars.active span:nth-child(2) {
+  .bars5.active span:nth-child(2) {
     opacity: 0;
   }
-  .bars.active span:nth-child(3) {
+  .bars5.active span:nth-child(3) {
     transform: rotate(45deg);
     bottom: 14px;
     color: var(--light-colour) !important;
