@@ -4,6 +4,7 @@
 .header a:hover {
   color: white;
 }
+
 li {
   list-style: none;
 }
@@ -38,14 +39,16 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem 0.3rem;
 }
 .header-inner1 h1 a {
   color: var(--light-colour);
 }
 .links1 {
   display: flex;
+  flex-direction: row;
 }
-.links1 a {
+.links1 .a {
   margin: 0 2rem;
   color: var(--light-colour);
   font-size: 1.3rem;
@@ -88,6 +91,7 @@ img {
   grid-template-columns: 1fr 1fr;
   padding: 2rem;
   margin: 10px 0;
+  overflow: hidden;
 }
 .persons p {
   max-width: 15%;
@@ -102,7 +106,7 @@ img {
   line-height: 2.1;
 }
 /* Hamburger */
-.bars {
+.bars1 {
   background: none;
   width: 30px;
   border: none;
@@ -112,7 +116,7 @@ img {
   z-index: 1002;
   display: none;
 }
-.bars span {
+.bars1 span {
   display: block;
   height: 3px;
   background-color: var(--light-colour);
@@ -122,12 +126,37 @@ img {
 }
 /* Media Queries */
 @media screen and (max-width: 1024px) {
-  .links a {
+  .links5,
+  .links1,
+  .links2,
+  .links3,
+  .links4 a {
     font-size: 0.9rem;
-    margin: 0 15px;
+    /* margin: 0 15px; */
   }
 }
 @media screen and (max-width: 700px) {
+  .header1,
+  .header2,
+  .header3,
+  .header4,
+  .header5 {
+    height: 65vh;
+  }
+  .showcase-text1 h3,
+  .showcase-text2 h3,
+  .showcase-text3 h3,
+  .showcase-text4 h3,
+  .showcase-text5 h3 {
+    font-size: 2.5rem;
+  }
+  .showcase-text1 p,
+  .showcase-text2 p,
+  .showcase-text3 p,
+  .showcase-text4 p,
+  .showcase-text5 p {
+    font-size: 1.3rem;
+  }
   .grid-3 {
     grid-template-columns: 1fr;
     display: flex;
@@ -136,7 +165,14 @@ img {
     align-items: center;
     text-align: center;
   }
-  .active {
+  .links1 .a {
+    margin: 0px !important;
+  }
+  .active1,
+  .active2,
+  .active3,
+  .active4,
+  .active5 {
     border: none;
   }
   .showcase-text h3 {
@@ -155,42 +191,42 @@ img {
   .links1 {
     height: 100vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
     position: fixed;
     top: 0;
     right: -100%;
-    padding: 80px 120px !important;
+    padding: 80px 120px;
     z-index: 1001;
     transition: 0.3s linear;
   }
-  .bars {
+  .bars1 {
     display: block;
     margin-left: 50%;
   }
   .active {
     display: none;
   }
-  .links1 a {
+  .links1 .a {
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--secondary-colour);
     text-align: center;
   }
-  .links1.active {
+  .links1#activenow {
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
-  .bars.active span:nth-child(1) {
+  .bars1#activeless span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
   }
-  .bars.active span:nth-child(2) {
+  .bars1#activeless span:nth-child(2) {
     opacity: 0;
   }
-  .bars.active span:nth-child(3) {
+  .bars1#activeless span:nth-child(3) {
     transform: rotate(45deg);
     bottom: 14px;
   }

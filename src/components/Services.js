@@ -1,7 +1,13 @@
-import React from "react";
+import React , {useState} from "react";
 
 import { Link } from "react-router-dom";
 const Services = () => {
+  // Toggle of NavBar
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
   
   return (
     <div>
@@ -10,32 +16,33 @@ const Services = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
-          <div className="bars">
+          <div className="bars4" id={toggle ? 'activeless' : ''}
+            onClick={handleClick}>
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links4">
+          <nav onClick={handleClick}>
+            <ul className="links4" id={toggle ? 'activenow' : ''}>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className='a'>Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" className='a'>About Us</Link>
               </li>
               <li>
-                <Link to="about">Contact</Link>
+                <Link to="about" className='a'>Contact</Link>
               </li>
               <li>
-                <Link to="/services" className="active mt-3">
+                <Link to="/services" className="active mt-3 a">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/spa">Spa</Link>
+                <Link to="/spa" className='a'>Spa</Link>
               </li>
               <li>
-                <Link to="/booknow" target='_blank'>Book Now</Link>
+                <Link to="/booknow" target='_blank' className='a'>BookNow</Link>
               </li>
             </ul>
           </nav>

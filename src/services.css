@@ -32,6 +32,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem 0.3rem;
 }
 .header-inner4 h1 a {
   color: var(--light-colour);
@@ -107,7 +108,7 @@ img {
 }
 
 /* Hamburger */
-.bars {
+.bars4 {
   background: none;
   width: 30px;
   border: none;
@@ -117,7 +118,7 @@ img {
   z-index: 1002;
   display: none;
 }
-.bars span {
+.bars4 span {
   display: block;
   height: 3px;
   background-color: var(--light-colour);
@@ -157,48 +158,56 @@ img {
   /* .grid-3 .social {
     grid-column: 2 span/ 2;
   } */
-  .links {
+  .links4 {
     height: 100vh;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5) !important;
     position: fixed;
     top: 0;
     right: -100%;
-    padding: 80px 120px !important;
+    padding: 80px 120px;
     z-index: 1001;
     transition: 0.3s linear;
   }
-  .bars {
+  .bars4 {
     display: block;
     margin-left: 50%;
   }
-  .links a {
+  .links4 .a {
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--secondary-colour);
     text-align: center;
   }
-  .links.active {
+  .links4#activenow {
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
-  .bars.active span:nth-child(1) {
+  .bars4#activeless span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
   }
-  .bars.active span:nth-child(2) {
+  .bars4#activeless span:nth-child(2) {
     opacity: 0;
   }
-  .bars.active span:nth-child(3) {
+  .bars4#activeless span:nth-child(3) {
     transform: rotate(45deg);
     bottom: 14px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .links a {
+  /* .links5,
+  .links1,
+  .links2,
+  .links3,
+  .links4 a {
+    font-size: 0.9rem !important;
+    margin: 0 15px !important;
+  } */
+  .links4 Link{
     font-size: 0.9rem;
     margin: 0 15px;
   }

@@ -1,49 +1,71 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import "../about.css";
 import { Link } from "react-router-dom";
 import people from "../images/people.jpg";
 import people2 from "../images/people2.jpg";
 import people3 from "../images/people3.jpg";
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
   useEffect(() => {
-    Aos.init({ duration: 1500})
+    Aos.init({ duration: 1000 });
   }, []);
-  return(
+
+  // NavBar Open Close
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+  return (
     <div>
       <section className="header1">
         <div className="container header-inner1">
           <h1>
             <Link to="/">Project</Link>
           </h1>
-          <div className="bars">
+          <div
+            className={"bars1"}
+            id={toggle ? "activeless" : ""}
+            onClick={handleClick}
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links1">
+          <nav onClick={handleClick}>
+            <ul className={"links1"} id={toggle ? "activenow" : ""}>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" className="a">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/about" className="active1">
+                <Link to="/about" className="active1 a">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" className="a">
+                  Contact
+                </Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/services" className="a">
+                  Services
+                </Link>
               </li>
               <li>
-                <Link to="/spa">Spa</Link>
+                <Link to="/spa" className="a">
+                  Spa
+                </Link>
               </li>
               <li>
-                <Link to="/booknow" target='_blank'>Book Now</Link>
+                <Link to="/booknow" target="_blank" className="a">
+                  Book Now
+                </Link>
               </li>
             </ul>
           </nav>
@@ -56,7 +78,7 @@ const About = () => {
       <section className="people">
         <div className="container">
           <div className="persons">
-            <div data-aos='fade-right'>
+            <div data-aos="fade-right">
               <h2>Head of</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -67,11 +89,11 @@ const About = () => {
                 nesciunt eum laborum omnis doloremque blanditiis laboriosam eos!
               </p>
             </div>
-            <img src={people} alt="#" data-aos='fade-left'/>
+            <img src={people} alt="#" data-aos="fade-left" />
           </div>
           <div className="persons">
-            <img src={people2} alt="#" data-aos='fade-left'/>
-            <div  data-aos='fade-left'>
+            <img src={people2} alt="#" data-aos="fade-left" />
+            <div data-aos="fade-left">
               <h2>Our Director</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -84,7 +106,7 @@ const About = () => {
             </div>
           </div>
           <div className="persons">
-            <div data-aos='fade-left'>
+            <div data-aos="fade-left">
               <h2>Our Founder</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -95,7 +117,7 @@ const About = () => {
                 nesciunt eum laborum omnis doloremque blanditiis laboriosam eos!
               </p>
             </div>
-            <img src={people3} alt="#" data-aos='fade-right'/>
+            <img src={people3} alt="#" data-aos="fade-right" />
           </div>
           <div className="history">
             <h1 className="text-center mb-5">

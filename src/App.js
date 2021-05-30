@@ -16,7 +16,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Spa from "./components/Spa";
-import BookNow from './components/BookNow'
+import Book from './components/Book'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/services" component={Services} />
         <Route exact path="/spa" component={Spa} />
-        <Route exact path="/booknow" component={BookNow} />
+        <Route exact path="/booknow" component={Book} />
       </Switch>
     </Router>
   );

@@ -1,0 +1,11 @@
+@media screen and (max-width: 1024px){
+    .links5 Link,
+  .links1 Link,
+  .links2 Link,
+  .links3 Link,
+  .links4 Link {
+    font-size: 0.9rem !important;
+    margin: 0 15px !important;
+  }
+  
+}

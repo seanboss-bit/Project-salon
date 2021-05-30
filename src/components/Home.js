@@ -1,4 +1,4 @@
-import React , {useEffect}from "react";
+import React , {useEffect, useState}from "react";
 
 import { Link } from "react-router-dom";
 import Aos from 'aos'
@@ -8,6 +8,12 @@ const Home = () => {
   useEffect(() => {
     Aos.init({ duration: 1500})
   }, []);
+  // Toggle of NavBar
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
   return (
     <div>
       {/* Header */}
@@ -16,32 +22,33 @@ const Home = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
-          <div className="bars">
+          <div className="bars3" id={toggle ? 'activeless' : ''}
+            onClick={handleClick}>
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links3">
+          <nav onClick={handleClick}>
+            <ul className="links3" id={toggle ? 'activenow' : ''}>
               <li>
-                <Link to="/" className="active3">
+                <Link to="/" className="active3 a">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" className='a'>About Us</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" className='a'>Contact</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/services" className='a'>Services</Link>
               </li>
               <li>
-                <Link to="/spa">Spa</Link>
+                <Link to="/spa" className='a'>Spa</Link>
               </li>
               <li>
-                <Link to="/booknow" target='_blank'>Book Now</Link>
+                <Link to="/booknow" target='_blank' className='a'>BookNow</Link>
               </li>
             </ul>
           </nav>
