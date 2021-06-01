@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef } from "react";
 import { v4 as uuid } from "uuid";
 import Header from "./BookNow Components/Header";
 import Service from "./BookNow Components/Service";
@@ -11,8 +10,14 @@ const Book = () => {
   // For Page Change
   const [count, setCount] = useState(1);
 
-  // TO Add TO List
+  // For Radio
+  const [radio, setRadio] = useState(false);
+  const handleChange = (e) => {
+    setRadio(e.target.value);
+  };
+  const ref = useRef();
 
+  // TO Add TO List
   const [isChecked, setIsChecked] = useState([0]);
 
   // Process of Adding to Cart for  FEatured
@@ -228,24 +233,28 @@ const Book = () => {
   const addToCart = (check, item) => {
     const product = cart.find((val) => val.id === item.id);
     if (product && check) {
-      const index = cart.indexOf(product)
-      setCart([...cart.splice(0, index), ...cart.splice(index + 1)])
-      return
-    };
-    if (!product && !check) setCart([...cart, item]);  
+      const index = cart.indexOf(product);
+      setCart([...cart.splice(0, index), ...cart.splice(index + 1)]);
+      return;
+    }
+    if (!product && !check) setCart([...cart, item]);
   };
-
-  //   const service = e => {
-  //     let name = check
-  //     name.push(e.target.value)
-  //     setCheck(name)
-  //     console.log(check);
-  //   }
-
+  // For Total Balance
+  var total = 0;
+  cart.forEach((item) => {
+    total = total + item.price;
+  });
   return (
     <div>
       <div className="bodystyle">
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log(cart.map((item) => item.label).toString());
+            console.log(radio);
+            console.log(total);
+          }}
+        >
           {count === 1 ? (
             <div>
               <Header
@@ -253,6 +262,7 @@ const Book = () => {
                 setCount={setCount}
                 cart={cart}
                 products={products}
+                total={total}
               />
               <Service
                 products={products}
@@ -268,20 +278,45 @@ const Book = () => {
             </div>
           ) : null}
           {count === 2 ? (
-            <SelectCharacter count={count} setCount={setCount} />
+            <SelectCharacter
+              count={count}
+              setCount={setCount}
+              radio={radio}
+              handleChange={handleChange}
+            />
           ) : null}
           {count === 3 ? (
             <div>
-              <Login count={count} setCount={setCount} />
+              <Login count={count} setCount={setCount} ref={ref} />
             </div>
           ) : null}
           {count === 4 ? (
             <div>
-              <Payment count={count} setCount={setCount} />
+              <Payment
+                count={count}
+                setCount={setCount}
+                cart={cart}
+                total={total}
+                radio={radio}
+              />
             </div>
           ) : null}
           {count === 4 ? (
-            <input type="submit" className="btn btn-secondary" value="Submit" />
+            <div className="successbutton">
+              <button
+                className="btn btn-secondary"
+                onClick={() => setCount(count - 1)}
+                disabled={count < 2}
+              >
+                Back
+              </button>
+              <input
+                type="submit"
+                className="btn btn-secondary"
+                value="Submit"
+              />
+              
+            </div>
           ) : null}
         </form>
       </div>

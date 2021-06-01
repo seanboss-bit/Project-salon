@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-const Header = ({ count, setCount, cart }) => {
-  let total = 0;
-  cart.forEach((item) => {
-    total = total + item.price;
-  });
+const Header = ({ count, setCount, cart, total }) => {
+  // let total = 0;
+  // cart.forEach((item) => {
+  //   total = total + item.price;
+  // });
   return (
     <div>
       {/* Navbar */}

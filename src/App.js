@@ -17,6 +17,7 @@ import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Spa from "./components/Spa";
 import Book from './components/Book'
+import Admin from './components/Admin'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/services" component={Services} />
         <Route exact path="/spa" component={Spa} />
         <Route exact path="/booknow" component={Book} />
+        <Route exact path="/admin" component={Admin} />
       </Switch>
     </Router>
   );
