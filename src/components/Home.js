@@ -76,7 +76,7 @@ const Home = () => {
         <Link to="/services" className="box-one" data-aos="zoom-in">
           Treatment
         </Link>
-        <Link to="/booknow" className="box-one" data-aos="zoom-in">
+        <Link to="/booknow" target='_blank' className="box-one" data-aos="zoom-in">
           Book Now
         </Link>
         <Link to="/spa" className="box-one" data-aos="zoom-in">

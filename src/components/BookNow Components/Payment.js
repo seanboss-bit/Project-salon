@@ -1,6 +1,7 @@
 import React from "react";
 
-const Payment = ({ count, cart, total, radio }) => {
+const Payment = ({ count, cart, total, radio, login, register }) => {
+  let user = login.username || register.username
   return (
     <div className="successbody">
       <div className="success">
@@ -12,11 +13,11 @@ const Payment = ({ count, cart, total, radio }) => {
       <div className="page">
         <div className="container">
           <div className="finally">
-            <h2>Client Name: </h2>
+            <h2>Client Name:<span className="sean"> {user}</span></h2>
             <h5>Services Selected: {cart.map((item) => item.label).toString()}</h5>
             <h5>Date of Booking: {Date()}</h5>
             <h5>Total Amount: ${total}</h5>
-            <h5>AppointMent Date: {Date(4)}</h5>
+            <h5>AppointMent Date: {}</h5>
             <h5>Stylist: {radio}</h5>
           </div>
         </div>

@@ -1,21 +1,33 @@
-import React, { useState, useRef } from "react";
+import React, { useState,useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import Header from "./BookNow Components/Header";
 import Service from "./BookNow Components/Service";
 import SelectCharacter from "./BookNow Components/SelectCharcter";
 import Login from "./BookNow Components/Login";
 import Payment from "./BookNow Components/Payment";
+import { Link } from "react-router-dom";
 
 const Book = () => {
+  // For Login Page
+  const [login, setLogin] = useState({
+    username: "",
+    password: "",
+  });
+  // For Register
+  const [register, setRegister] = useState({
+    username: '',
+    email: '',
+    password: ''
+  })
+
   // For Page Change
   const [count, setCount] = useState(1);
 
   // For Radio
-  const [radio, setRadio] = useState(false);
+  const [radio, setRadio] = useState("");
   const handleChange = (e) => {
     setRadio(e.target.value);
   };
-  const ref = useRef();
 
   // TO Add TO List
   const [isChecked, setIsChecked] = useState([0]);
@@ -244,15 +256,29 @@ const Book = () => {
   cart.forEach((item) => {
     total = total + item.price;
   });
+
+  // To Save And Get From Local Storage
+  const LOCAL_STORAGE_KEY = "teamsalon";
+  // To Get
+  useEffect(() => {
+    const savedBookings = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (savedBookings) {
+      console.log(savedBookings);
+    }
+  }, []);
+
+  // TO Save
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <div>
       <div className="bodystyle">
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            console.log(cart.map((item) => item.label).toString());
-            console.log(radio);
-            console.log(total);
+          onSubmit={() => {
+            <Link to='/'></Link>
+            alert('Thanks For Visiting')
           }}
         >
           {count === 1 ? (
@@ -287,7 +313,8 @@ const Book = () => {
           ) : null}
           {count === 3 ? (
             <div>
-              <Login count={count} setCount={setCount} ref={ref} />
+              <Login count={count} setCount={setCount} login={login} setLogin={setLogin}
+              register={register} setRegister={setRegister}/>
             </div>
           ) : null}
           {count === 4 ? (
@@ -298,6 +325,8 @@ const Book = () => {
                 cart={cart}
                 total={total}
                 radio={radio}
+                login={login}
+                register={register}
               />
             </div>
           ) : null}
@@ -315,7 +344,6 @@ const Book = () => {
                 className="btn btn-secondary"
                 value="Submit"
               />
-              
             </div>
           ) : null}
         </form>

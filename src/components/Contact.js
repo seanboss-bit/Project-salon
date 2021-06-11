@@ -17,8 +17,8 @@ const Contact = () => {
   });
 
   const updateForm = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+    setForm({...form, [e.target.name]: e.target.value})
+  }
   return (
     <div>
       <section className="header2">

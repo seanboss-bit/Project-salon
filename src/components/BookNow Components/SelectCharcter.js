@@ -1,13 +1,6 @@
-import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
+import React from "react";
 
-const SelectCharcter = ({ count, setCount , radio, handleChange, ref}) => {
-  // const [radio, setRadio] = useState(false);
-  // const handleChange = (e) => {
-  //   console.log(e.target.value);
-  //   setRadio(e.target.value)
-  // }
-
+const SelectCharcter = ({ count, setCount , radio, handleChange}) => {
   return (
     <div className="select">
       <div className="smooth">
@@ -21,7 +14,7 @@ const SelectCharcter = ({ count, setCount , radio, handleChange, ref}) => {
             >
               <i class="fas fa-arrow-left"></i>
             </button>
-            <h2 className="p-5">Select Character</h2>
+            <h2 className="p-5">Select Preffered Stylist</h2>
             <button
               className="btn btn-secondary"
               onClick={() => setCount(count + 1)}

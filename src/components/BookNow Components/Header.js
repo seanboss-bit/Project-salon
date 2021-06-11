@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 
 const Header = ({ count, setCount, cart, total }) => {
   // let total = 0;
   // cart.forEach((item) => {
   //   total = total + item.price;
+  // NavBar Open Close
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
   // });
   return (
     <div>
@@ -12,7 +18,18 @@ const Header = ({ count, setCount, cart, total }) => {
       <div className="what">
         <div className="white mb-5">
           <div className="container pt-3">
-            <span>Step {count} Of 4</span>
+            <div className="top">
+              <span>Step {count} Of 4</span>
+              <div
+                className={"bars1"}
+                id={toggle ? "activeless" : ""}
+                onClick={handleClick}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <div>
               <h2 className="pt-3 pb-3 ">
                 <button
@@ -26,16 +43,20 @@ const Header = ({ count, setCount, cart, total }) => {
               </h2>
             </div>
             <div className="navbar">
-              <div>
-                <ul className={"unilink pt-3 pb-4"}>
+              <div onClick={handleClick}>
+                <ul
+                  className={"unilink pt-3 pb-4 links1"}
+                  id={toggle ? "activenow" : ""}
+                >
                   <Link
                     to="Hair"
                     className={"ms-3 me-3 a"}
                     activeClass="under"
                     spy={true}
                     smooth={true}
-                    offset={-160}
+                    offset={-130}
                     duration={50}
+                    onClick={handleClick}
                   >
                     Featured
                   </Link>
@@ -45,8 +66,9 @@ const Header = ({ count, setCount, cart, total }) => {
                     activeClass="under"
                     spy={true}
                     smooth={true}
-                    offset={-160}
+                    offset={-120}
                     duration={50}
+                    onClick={handleClick}
                   >
                     Hands
                   </Link>
@@ -56,8 +78,9 @@ const Header = ({ count, setCount, cart, total }) => {
                     activeClass="under"
                     spy={true}
                     smooth={true}
-                    offset={-160}
+                    offset={-120}
                     duration={50}
+                    onClick={handleClick}
                   >
                     Feet
                   </Link>
@@ -67,8 +90,9 @@ const Header = ({ count, setCount, cart, total }) => {
                     activeClass="under"
                     spy={true}
                     smooth={true}
-                    offset={-160}
+                    offset={-120}
                     duration={50}
+                    onClick={handleClick}
                   >
                     Hands + Feet
                   </Link>
@@ -78,8 +102,9 @@ const Header = ({ count, setCount, cart, total }) => {
                     activeClass="under"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-120}
                     duration={50}
+                    onClick={handleClick}
                   >
                     Body
                   </Link>
@@ -89,8 +114,9 @@ const Header = ({ count, setCount, cart, total }) => {
                     activeClass="under"
                     spy={true}
                     smooth={true}
-                    offset={-160}
+                    offset={-120}
                     duration={50}
+                    onClick={handleClick}
                   >
                     Skin
                   </Link>
@@ -119,19 +145,21 @@ const Header = ({ count, setCount, cart, total }) => {
                       ))}
                     </div>
                   </div>
-                  <div className="sum">
-                    <div>
-                      <h4>Total</h4>
+                  <div className='responsive'>
+                    <div className="sum">
+                      <div>
+                        <h4>Total</h4>
+                      </div>
+                      <div>${total}</div>
                     </div>
-                    <div>${total}</div>
+                    <button
+                      className="btn btn-secondary"
+                      onClick={() => setCount(count + 1)}
+                      disabled={(count > 3, cart.length === 0)}
+                    >
+                      Book Now
+                    </button>
                   </div>
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => setCount(count + 1)}
-                    disabled={(count > 3, cart.length === 0)}
-                  >
-                    Book Now
-                  </button>
                 </div>
               </div>
             </div>
