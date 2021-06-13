@@ -146,9 +146,9 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, possimus.
                 </p>
-                <button className="btn2 transperent " onClick={signup}>
+                <div className="btn2 transperent " onClick={signup}>
                   sign Up
-                </button>
+                </div>
               </div>
             </div>
             <div className="panel right-panel">
@@ -158,9 +158,9 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Culpa, possimus.
                 </p>
-                <button className="btn2 transperent" onClick={signup}>
+                <div className="btn2 transperent" onClick={signup}>
                   sign in
-                </button>
+                </div>
               </div>
             </div>
           </div>

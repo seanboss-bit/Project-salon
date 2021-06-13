@@ -120,6 +120,7 @@
   font-weight: 600;
   margin: 10px 0;
   transition: 0.5s;
+  text-align: center;
 }
 .btn2:hover {
   background: #555;
@@ -166,6 +167,7 @@
   margin: 0 !important;
   background: none;
   border: 2px solid #fff;
+  text-align: center;
   width: 130px;
   height: 41px;
   font-weight: 600;
@@ -173,6 +175,17 @@
 }
 .right-panel .content {
   transform: translateX(800px);
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* Animation */
 .containerlogin#sign-up-mode::before {
