@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const BookingSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Please Enter Name"],
+  },
   cart: {
     type: Array,
     required: [true, "Please Add To Cart"],

@@ -26,7 +26,7 @@ exports.getBookings = async (req, res, next) => {
 // @access users
 exports.addBookings = async (req, res, next) => {
   try {
-    const { cart, stylist, price } = req.body;
+    const { cart, stylist, price, name } = req.body;
 
     const booking = await AddBooking.create(req.body);
 
@@ -64,7 +64,7 @@ exports.addUser = async (req, res, next) => {
     await newUser.save();
 
     res.status(201).json({
-      message: "User Registered",
+      message: "You Have Been Registered Successfully",
       data: newUser,
     });
   } catch (error) {

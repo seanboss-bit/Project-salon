@@ -1,6 +1,8 @@
 import React from "react";
 
 const Payment = ({ count, cart, total, radio, login, register }) => {
+  let appoint = new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000);
+  
   let user = login.username || register.username
   return (
     <div className="successbody">
@@ -17,7 +19,7 @@ const Payment = ({ count, cart, total, radio, login, register }) => {
             <h5>Services Selected: {cart.map((item) => item.label).toString()}</h5>
             <h5>Date of Booking: {Date()}</h5>
             <h5>Total Amount: ${total}</h5>
-            <h5>AppointMent Date: {}</h5>
+            <h5>AppointMent Date: {appoint.toString()}</h5>
             <h5>Stylist: {radio}</h5>
           </div>
         </div>

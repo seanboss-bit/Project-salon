@@ -47,13 +47,13 @@ UserSchema.pre("save", async function (next) {
 });
 
 // Sean Way Of Comparing Password For Login
-UserSchema.statics.comparePassword = async (username, password, res) => {
+UserSchema.statics.comparePassword = async (username, password) => {
   const findUsername = await User.findOne({ username });
   if (!findUsername)
-    return res.status(404).json({ error: "Wrong User Name or Password" });
+    throw Error("Wrong Username or Password");
   const isMatch = await bcrypt.compare(password, findUsername.password);
   if (!isMatch)
-    return res.status(404).json({ message: "Wrong Email Or Password" });
+   throw Error ("Wrong Username Or Password");
   return findUsername;
 };
 const User = mongoose.model("User", UserSchema);

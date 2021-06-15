@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
+const Login = ({
+  count,
+  setCount,
+  login,
+  setLogin,
+  setRegister,
+  register,
+  registerUser,
+  LoginUser,
+}) => {
   const [container, setContainer] = useState(false);
   const signup = () => {
     setContainer(!container);
@@ -15,18 +24,27 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
     if (login.password === "" || login.username === "") {
       alert("Enter Required Fields");
     } else {
+      const { username, password } = login;
+      LoginUser({
+        username,
+        password,
+      });
       setCount(count + 1);
     }
+
     e.preventDefault();
   };
+  const { username, email, password } = register;
+
   const registerSubmit = (e) => {
-    if (
-      register.username === "" ||
-      register.password === "" ||
-      register.email === ""
-    ) {
+    if (username === "" || password === "" || email === "") {
       alert("Enter Required Fields");
     } else {
+      registerUser({
+        username,
+        email,
+        password,
+      });
       setCount(count + 1);
     }
     e.preventDefault();
@@ -63,7 +81,7 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                   <i className="fas fa-user "></i>
                   <input
                     type="text"
-                    placeholder="Enter UserName"
+                    placeholder="Enter FullName"
                     name="username"
                     value={login.username}
                     onChange={updateLogin}
@@ -98,9 +116,9 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                   <i className="fas fa-user "></i>
                   <input
                     type="text"
-                    placeholder="Enter UserName"
+                    placeholder="Enter FullName"
                     name="username"
-                    value={register.username}
+                    value={username}
                     onChange={updateRegister}
                   />
                 </div>
@@ -110,7 +128,7 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                     type="email"
                     placeholder="Enter Email"
                     name="email"
-                    value={register.email}
+                    value={email}
                     onChange={updateRegister}
                   />
                 </div>
@@ -120,7 +138,7 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                     type="password"
                     placeholder="Enter Password"
                     name="password"
-                    value={register.password}
+                    value={password}
                     onChange={updateRegister}
                   />
                 </div>
@@ -129,7 +147,7 @@ const Login = ({ count, setCount, login, setLogin, setRegister, register }) => {
                   value="Sign Up"
                   className="btn2 solid"
                   onClick={registerSubmit}
-                  disabled={count > 3}
+                  // disabled={count > 3}
                 />
                 <p className="social-text">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.

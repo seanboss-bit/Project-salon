@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import Header from "./BookNow Components/Header";
 import Service from "./BookNow Components/Service";
@@ -6,6 +6,7 @@ import SelectCharacter from "./BookNow Components/SelectCharcter";
 import Login from "./BookNow Components/Login";
 import Payment from "./BookNow Components/Payment";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Book = () => {
   // For Login Page
@@ -13,12 +14,89 @@ const Book = () => {
     username: "",
     password: "",
   });
+
+  const [loginInit, setLoginInit] = useState({
+    user: null,
+    message: null,
+    error: null,
+  });
+
+  const LoginUser = async (formData) => {
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const response = await axios.post(
+        "http://localhost:5000/user/login",
+        formData,
+        config
+      );
+      const payLoad = response.data;
+      setLoginInit({
+        ...loginInit,
+        user: payLoad.user,
+        message: payLoad.message,
+        loading: false,
+      });
+      alert(`Welcome ${payLoad.user.username}, ${payLoad.message}`);
+      setLoginInit({ ...loginInit });
+    } catch (error) {
+      const err = error.response.data.error;
+      setLoginInit({
+        ...loginInit,
+        error: err,
+      });
+      alert(loginInit.error);
+    }
+  };
+
   // For Register
   const [register, setRegister] = useState({
-    username: '',
-    email: '',
-    password: ''
-  })
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [regInit, setRegInit] = useState({
+    user: null,
+    message: null,
+    error: null,
+  });
+
+  const registerUser = async (formData) => {
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const response = await axios.post(
+        "http://localhost:5000/user/register",
+        formData,
+        config
+      );
+
+      const payLoad = response.data;
+      setRegInit({
+        ...regInit,
+        user: payLoad.data,
+        message: payLoad.message,
+        loading: false,
+      });
+      alert(`Welcome ${payLoad.data.username}, ${payLoad.message}`);
+      setRegInit({ ...regInit });
+    } catch (error) {
+      const err = error.response.data.error;
+      setRegInit({
+        ...regInit,
+        error: err,
+      });
+      alert(regInit.error);
+    }
+  };
 
   // For Page Change
   const [count, setCount] = useState(1);
@@ -133,6 +211,7 @@ const Book = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit? Ex illo culpa similique nam vel utquidem sint aspernatur? Est, labore. Iusto repudiandae itaque, labore illum reiciendis doloremque libero!",
     },
   ]);
+
   // For Feet
   const [feets] = useState([
     {
@@ -160,6 +239,7 @@ const Book = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit? Ex illo culpa similique nam vel utquidem sint aspernatur? Est, labore. Iusto repudiandae itaque, labore illum reiciendis doloremque libero!",
     },
   ]);
+
   // Hand And Feet
   const [handsAndFeets] = useState([
     {
@@ -195,6 +275,7 @@ const Book = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit? Ex illo culpa similique nam vel utquidem sint aspernatur? Est, labore. Iusto repudiandae itaque, labore illum reiciendis doloremque libero!",
     },
   ]);
+
   // For Skin
   const [skins] = useState([
     {
@@ -222,6 +303,7 @@ const Book = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit? Ex illo culpa similique nam vel utquidem sint aspernatur? Est, labore. Iusto repudiandae itaque, labore illum reiciendis doloremque libero!",
     },
   ]);
+
   const [bodys] = useState([
     {
       label: " Full Body Massage",
@@ -240,6 +322,7 @@ const Book = () => {
     },
   ]);
 
+  //  Cart Functions
   const [cart, setCart] = useState([]);
 
   const addToCart = (check, item) => {
@@ -251,6 +334,7 @@ const Book = () => {
     }
     if (!product && !check) setCart([...cart, item]);
   };
+
   // For Total Balance
   var total = 0;
   cart.forEach((item) => {
@@ -272,13 +356,46 @@ const Book = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
 
+  const [add, setAdd] = useState({
+    user: null,
+    error: null,
+    message: null,
+  });
+  const submitTransaction = async (formData) => {
+    try {
+      const response = await axios.post("http://localhost:5000/booking/admin");
+
+      const transaction = response.data;
+
+      console.log(response.data.booking.cart);
+
+      setAdd({
+        ...add,
+        user: transaction.booking,
+        message: transaction.message,
+      });
+      setAdd({ ...add });
+      alert(`${response.message}`);
+    } catch (error) {
+      const err = error.response.data.error;
+      setAdd({
+        ...add,
+        error: err,
+      });
+    }
+  };
   return (
     <div>
       <div className="bodystyle">
         <form
-          onSubmit={() => {
-            <Link to='/'></Link>
-            alert('Thanks For Visiting')
+          onSubmit={(e) => {
+            e.preventDefault();
+            submitTransaction({
+              name: login.username || register.username,
+              cart,
+              stylist: radio,
+              price: total,
+            });
           }}
         >
           {count === 1 ? (
@@ -313,8 +430,17 @@ const Book = () => {
           ) : null}
           {count === 3 ? (
             <div>
-              <Login count={count} setCount={setCount} login={login} setLogin={setLogin}
-              register={register} setRegister={setRegister}/>
+              <Login
+                count={count}
+                setCount={setCount}
+                login={login}
+                setLogin={setLogin}
+                register={register}
+                setRegister={setRegister}
+                registerUser={registerUser}
+                LoginUser={LoginUser}
+                loginInit={loginInit}
+              />
             </div>
           ) : null}
           {count === 4 ? (
