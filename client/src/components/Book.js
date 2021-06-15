@@ -5,7 +5,6 @@ import Service from "./BookNow Components/Service";
 import SelectCharacter from "./BookNow Components/SelectCharcter";
 import Login from "./BookNow Components/Login";
 import Payment from "./BookNow Components/Payment";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Book = () => {
@@ -337,7 +336,7 @@ const Book = () => {
 
   // For Total Balance
   var total = 0;
-  cart.forEach((item) => {
+  cart.forEach((item, index) => {
     total = total + item.price;
   });
 
@@ -356,46 +355,27 @@ const Book = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
 
-  const [add, setAdd] = useState({
-    user: null,
-    error: null,
-    message: null,
-  });
   const submitTransaction = async (formData) => {
     try {
-      const response = await axios.post("http://localhost:5000/booking/admin");
-
-      const transaction = response.data;
-
-      console.log(response.data.booking.cart);
-
-      setAdd({
-        ...add,
-        user: transaction.booking,
-        message: transaction.message,
+      const response = await axios.post("http://localhost:5000/booking/admin", {
+        name: login.username || register.username,
+        cart: cart.map((item) => item.label).toString(),
+        stylist: radio,
+        price: total,
       });
-      setAdd({ ...add });
-      alert(`${response.message}`);
+      alert(`${response.data.message}`);
     } catch (error) {
-      const err = error.response.data.error;
-      setAdd({
-        ...add,
-        error: err,
-      });
+      const err = error.error;
+
     }
   };
   return (
     <div>
       <div className="bodystyle">
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            submitTransaction({
-              name: login.username || register.username,
-              cart,
-              stylist: radio,
-              price: total,
-            });
+          onSubmit={() => {
+            alert(`Thanks For Visiting`)
+            submitTransaction();
           }}
         >
           {count === 1 ? (

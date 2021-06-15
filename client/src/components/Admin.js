@@ -6,17 +6,15 @@ const Admin = () => {
   const [adminData, setAdminData] = useState([]);
 
   const getBooking = async () => {
-    await axios.get("http://localhost:5000/booking/admin").then((response) => {
+    try {
+      const response = await axios.get("http://localhost:5000/booking/admin");
+      const bookings = response.data.data;
 
-      try {
-        const bookingData = response.data.data;
-
-        setAdminData(...adminData , bookingData);
-      } catch (error) {
-        const err = error.response.data.error
-        console.log(err)
-      }
-    });
+      setAdminData(...adminData, bookings);
+    } catch (error) {
+      const err = error.error;
+      console.log(err);
+    }
   };
   useEffect(() => getBooking(), []);
   return (
@@ -33,9 +31,9 @@ const Admin = () => {
       </div>
       <div className="adminbookings mt-5">
         <div className=" container mb-5">
-          {adminData.map((admin) => (
+          {adminData.map((admin, idx) => (
             <>
-              <AdminContent admin={admin} />
+              <AdminContent admin={admin} key={idx} />
             </>
           ))}
         </div>
