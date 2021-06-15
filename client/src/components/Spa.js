@@ -1,16 +1,24 @@
-import React from "react";
+import React , {useState} from "react";
+
 
 import { Link } from "react-router-dom";
-import spa1 from '../images/spa1.jpg'
-import spa2 from '../images/spa2.jpg'
-import spa3 from '../images/spa3.jpg'
-import spa4 from '../images/spa4.jpg'
-import spa5 from '../images/spa5.jpg'
-import spa9 from '../images/spa9.jpg'
-import spa7 from '../images/spa7.jpg'
-import spa8 from '../images/spa8.jpg'
+import spa1 from "../images/spa1.jpg";
+import spa2 from "../images/spa2.jpg";
+import spa3 from "../images/spa3.jpg";
+import spa4 from "../images/spa4.jpg";
+import spa5 from "../images/spa5.jpg";
+import spa9 from "../images/spa9.jpg";
+import spa7 from "../images/spa7.jpg";
+import spa8 from "../images/spa8.jpg";
 
 const Spa = () => {
+  // Toggle of NavBar
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <div>
       <section className="header5">
@@ -18,14 +26,20 @@ const Spa = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
+<<<<<<< HEAD:src/components/Spa.js
           <div className="bars5">
+=======
+          <div className="bars5" id={toggle ? 'activeless' : ''}
+            onClick={handleClick}>
+>>>>>>> sean:client/src/components/Spa.js
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links5">
+          <nav onClick={handleClick}>
+            <ul className="links5" id={toggle ? 'activenow' : ''}>
               <li>
+<<<<<<< HEAD:src/components/Spa.js
                 <Link to="/" className='a'>Home</Link>
               </li>
               <li>
@@ -36,6 +50,26 @@ const Spa = () => {
               </li>
               <li>
                 <Link to="/services" className='a'>Services</Link>
+=======
+                <Link to="/" className="a">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="a">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="a">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="a">
+                  Services
+                </Link>
+>>>>>>> sean:client/src/components/Spa.js
               </li>
               <li>
                 <Link to="/spa" className="active5 mt-3 a">
@@ -43,7 +77,11 @@ const Spa = () => {
                 </Link>
               </li>
               <li>
+<<<<<<< HEAD:src/components/Spa.js
                 <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
+=======
+                <Link to="/booknow" target='_blank' className='a'>BookNow</Link>
+>>>>>>> sean:client/src/components/Spa.js
               </li>
             </ul>
           </nav>
@@ -67,7 +105,7 @@ const Spa = () => {
         </div>
       </div>
       {/* Service Display */}
-      <div className="service">
+      <div className="service2">
         <div className="container grid-2">
           <div>
             <h2>Eyelash Extensions</h2>
@@ -102,13 +140,13 @@ const Spa = () => {
           <div>
             <h2>Lash Lift </h2>
             <p>
-              Keratin Lash Lift is Link lash enhancement treatment that turns your
-              natural lashes upwards, gives them length, height, and volume.
-              When adding Link tint to the treatment, it gives Link thicker, mascara
-              look, for an alternative to makeup. This advanced technique is Link
-              potential alternative to lash extensions. It may also compliment
-              the application of lash extensions for those whose lashes are too
-              straight or too curly.
+              Keratin Lash Lift is Link lash enhancement treatment that turns
+              your natural lashes upwards, gives them length, height, and
+              volume. When adding Link tint to the treatment, it gives Link
+              thicker, mascara look, for an alternative to makeup. This advanced
+              technique is Link potential alternative to lash extensions. It may
+              also compliment the application of lash extensions for those whose
+              lashes are too straight or too curly.
             </p>
             <div className="para">
               <p>Lash Lift - $100</p>

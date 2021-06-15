@@ -1,10 +1,10 @@
 .header a {
   text-decoration: none;
 }
-.header a:hover{
+.header a:hover {
   color: white;
 }
-a{
+a {
   text-decoration: none;
 }
 li {
@@ -44,10 +44,10 @@ img {
 .header-inner2 h1 a {
   color: var(--light-colour);
 }
-.links2 {
+.links8 {
   display: flex;
 }
-.links2 a {
+.links8 a {
   margin: 0 2rem;
   color: var(--light-colour);
   font-size: 1.3rem;
@@ -64,39 +64,53 @@ img {
   color: var(--light-colour);
 }
 /* COntent */
-.grid-info{
+.grid-info {
   display: flex;
   justify-content: space-between;
   padding: 2rem 0;
   align-items: center;
-} 
-.grid-info h2{
+}
+.grid-info h2 {
   align-items: initial;
 }
-.grid-info a{
+.grid-info a {
   text-decoration: none;
   color: #333;
   font-weight: 700;
   font-size: 1.5rem;
 }
 /* Form */
-.form{
+.form {
   display: flex;
   flex-direction: column;
 }
-.form input[type=button]{
+.form input[type="submit"] {
   align-self: flex-start;
   padding: 0.5rem 2.3rem;
+  margin: 0 !important;
 }
-.form input[type=text], .form input[type=email], .form textarea{
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
   padding: 0.5rem 0.3rem;
   margin: 1rem 0;
+  border: none;
+ border-bottom: 1px solid var(--dark-colour); 
 }
-.form label{
+.form input[type="text"],
+.form input[type="email"],
+.form textarea:focus{
+  outline: none;
+}
+.form label {
   margin: 0;
 }
 /* Hamburger */
+<<<<<<< HEAD:src/contact.css
 .bars2 {
+=======
+.bars8 {
+>>>>>>> sean:client/src/contact.css
   background: none;
   width: 30px;
   border: none;
@@ -106,7 +120,11 @@ img {
   z-index: 1002;
   display: none;
 }
+<<<<<<< HEAD:src/contact.css
 .bars2 span {
+=======
+.bars8 span {
+>>>>>>> sean:client/src/contact.css
   display: block;
   height: 3px;
   background-color: var(--light-colour);
@@ -137,7 +155,7 @@ img {
   transition: ease 0.4s;
 }
 @media screen and (max-width: 700px) {
-  .grid-info{
+  .grid-info {
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -153,10 +171,14 @@ img {
   .active {
     border: none;
   }
+<<<<<<< HEAD:src/contact.css
   .links2 {
+=======
+  .links8 {
+>>>>>>> sean:client/src/contact.css
     height: 100vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
     position: fixed;
     top: 0;
     right: -100%;
@@ -164,23 +186,36 @@ img {
     z-index: 1001;
     transition: 0.3s linear;
   }
+<<<<<<< HEAD:src/contact.css
   .bars2 {
     display: block;
     margin-left: 50%;
   }
   .links2 a {
+=======
+  .bars8 {
+    display: block;
+    margin-left: 50%;
+  }
+  .links8 .a {
+>>>>>>> sean:client/src/contact.css
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--secondary-colour);
     text-align: center;
   }
+<<<<<<< HEAD:src/contact.css
   .links2.active {
+=======
+  .links8#activenow {
+>>>>>>> sean:client/src/contact.css
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
+<<<<<<< HEAD:src/contact.css
   .bars2.active span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
@@ -189,12 +224,32 @@ img {
     opacity: 0;
   }
   .bars2.active span:nth-child(3) {
+=======
+  .bars8#activeless span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+  .bars8#activeless span:nth-child(2) {
+    opacity: 0;
+  }
+  .bars8#activeless span:nth-child(3) {
+>>>>>>> sean:client/src/contact.css
     transform: rotate(45deg);
     bottom: 14px;
   }
+  .form input[type="submit"]{
+    width: 100%;
+    text-align: center;
+    margin: 0 !important;
+  }
+ 
 }
 @media screen and (max-width: 1024px) {
+<<<<<<< HEAD:src/contact.css
   .links2 a {
+=======
+  .links8 a {
+>>>>>>> sean:client/src/contact.css
     font-size: 0.9rem;
     margin: 0 15px;
   }

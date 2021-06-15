@@ -132,7 +132,7 @@ img {
   .links3,
   .links4 a {
     font-size: 0.9rem;
-    margin: 0 15px;
+    /* margin: 0 15px; */
   }
 }
 @media screen and (max-width: 700px) {
@@ -143,6 +143,23 @@ img {
   .header5 {
     height: 65vh;
   }
+<<<<<<< HEAD:src/about.css
+=======
+  .showcase-text1 h3,
+  .showcase-text2 h3,
+  .showcase-text3 h3,
+  .showcase-text4 h3,
+  .showcase-text5 h3 {
+    font-size: 2.5rem;
+  }
+  .showcase-text1 p,
+  .showcase-text2 p,
+  .showcase-text3 p,
+  .showcase-text4 p,
+  .showcase-text5 p {
+    font-size: 1.3rem;
+  }
+>>>>>>> sean:client/src/about.css
   .grid-3 {
     grid-template-columns: 1fr;
     display: flex;
@@ -151,7 +168,14 @@ img {
     align-items: center;
     text-align: center;
   }
-  .active {
+  .links1 .a {
+    margin: 0px !important;
+  }
+  .active1,
+  .active2,
+  .active3,
+  .active4,
+  .active5 {
     border: none;
   }
   .showcase-text h3 {
@@ -170,11 +194,16 @@ img {
   .links1 {
     height: 100vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
     position: fixed;
     top: 0;
+<<<<<<< HEAD:src/about.css
     right: -110%;
     padding: 80px 120px !important;
+=======
+    right: -100%;
+    padding: 80px 120px;
+>>>>>>> sean:client/src/about.css
     z-index: 1001;
     transition: 0.3s linear;
   }
@@ -192,12 +221,17 @@ img {
     color: var(--secondary-colour);
     text-align: center;
   }
+<<<<<<< HEAD:src/about.css
   .links1.activenow {
+=======
+  .links1#activenow {
+>>>>>>> sean:client/src/about.css
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
+<<<<<<< HEAD:src/about.css
   .bars1.activeless span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
@@ -206,6 +240,16 @@ img {
     opacity: 0;
   }
   .bars1.activeless span:nth-child(3) {
+=======
+  .bars1#activeless span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+  .bars1#activeless span:nth-child(2) {
+    opacity: 0;
+  }
+  .bars1#activeless span:nth-child(3) {
+>>>>>>> sean:client/src/about.css
     transform: rotate(45deg);
     bottom: 14px;
   }

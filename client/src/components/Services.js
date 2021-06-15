@@ -1,7 +1,13 @@
-import React from "react";
+import React , {useState} from "react";
 
 import { Link } from "react-router-dom";
 const Services = () => {
+  // Toggle of NavBar
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
   
   return (
     <div>
@@ -10,13 +16,18 @@ const Services = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
+<<<<<<< HEAD:src/components/Services.js
           <div className="bars4">
+=======
+          <div className="bars4" id={toggle ? 'activeless' : ''}
+            onClick={handleClick}>
+>>>>>>> sean:client/src/components/Services.js
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links4">
+          <nav onClick={handleClick}>
+            <ul className="links4" id={toggle ? 'activenow' : ''}>
               <li>
                 <Link to="/" className='a'>Home</Link>
               </li>
@@ -35,7 +46,11 @@ const Services = () => {
                 <Link to="/spa" className='a'>Spa</Link>
               </li>
               <li>
+<<<<<<< HEAD:src/components/Services.js
                 <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
+=======
+                <Link to="/booknow" target='_blank' className='a'>BookNow</Link>
+>>>>>>> sean:client/src/components/Services.js
               </li>
             </ul>
           </nav>

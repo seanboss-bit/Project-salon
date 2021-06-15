@@ -165,7 +165,7 @@ img {
     position: fixed;
     top: 0;
     right: -100%;
-    padding: 80px 120px !important;
+    padding: 80px 120px;
     z-index: 1001;
     transition: 0.3s linear;
   }
@@ -173,19 +173,28 @@ img {
     display: block;
     margin-left: 50%;
   }
+<<<<<<< HEAD:src/services.css
   .links4 a {
+=======
+  .links4 .a {
+>>>>>>> sean:client/src/services.css
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--secondary-colour);
     text-align: center;
   }
+<<<<<<< HEAD:src/services.css
   .links4.active {
+=======
+  .links4#activenow {
+>>>>>>> sean:client/src/services.css
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
+<<<<<<< HEAD:src/services.css
   .bars4.active span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
@@ -194,6 +203,16 @@ img {
     opacity: 0;
   }
   .bars4.active span:nth-child(3) {
+=======
+  .bars4#activeless span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+  .bars4#activeless span:nth-child(2) {
+    opacity: 0;
+  }
+  .bars4#activeless span:nth-child(3) {
+>>>>>>> sean:client/src/services.css
     transform: rotate(45deg);
     bottom: 14px;
   }

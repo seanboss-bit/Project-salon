@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Contact = () => {
+  // Toggle of NavBar
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
+  const [form, setForm] = useState({
+    email: "",
+    name: "",
+    textarea: "",
+  });
+
+  const updateForm = (e) => {
+    setForm({...form, [e.target.name]: e.target.value})
+  }
   return (
     <div>
       <section className="header2">
@@ -10,18 +26,37 @@ const Contact = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
+<<<<<<< HEAD:src/components/Contact.js
           <div className="bars2">
+=======
+          <div
+            className="bars8"
+            id={toggle ? "activeless" : ""}
+            onClick={handleClick}
+          >
+>>>>>>> sean:client/src/components/Contact.js
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links2">
+          <nav onClick={handleClick}>
+            <ul className="links8" id={toggle ? "activenow" : ""}>
               <li>
+<<<<<<< HEAD:src/components/Contact.js
                 <Link to="/" className='a'>Home</Link>
               </li>
               <li>
                 <Link to="/about" className='a'>About Us</Link>
+=======
+                <Link to="/" className="a">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="a">
+                  About Us
+                </Link>
+>>>>>>> sean:client/src/components/Contact.js
               </li>
               <li>
                 <Link to="/contact" className="active mt-3 a">
@@ -29,6 +64,7 @@ const Contact = () => {
                 </Link>
               </li>
               <li>
+<<<<<<< HEAD:src/components/Contact.js
                 <Link to="/services" className='a'>Services</Link>
               </li>
               <li>
@@ -36,6 +72,21 @@ const Contact = () => {
               </li>
               <li>
                 <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
+=======
+                <Link to="/services" className="a">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/spa" className="a">
+                  Spa
+                </Link>
+              </li>
+              <li>
+                <Link to="/booknow" target="_blank" className="a">
+                  BookNow
+                </Link>
+>>>>>>> sean:client/src/components/Contact.js
               </li>
             </ul>
           </nav>
@@ -96,14 +147,45 @@ const Contact = () => {
               <h2>Send Us A message</h2>
             </div>
             <div className="col-xs-12 col-lg-6">
-              <form action="#" className="form">
+              <form
+                action="#"
+                className="form"
+                onSubmit={() =>
+                  alert(
+                    ` Submitted 
+                    Name: ${form.name} 
+                    Email: ${form.email}
+                    Message: ${form.textarea}`
+                  )
+                }
+              >
                 <label>Name</label>
-                <input type="text" placeholder="Enter Name" />
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  onChange={updateForm}
+                  value={form.name}
+                  required
+                  name="name"
+                />
                 <label> Email</label>
-                <input type="email" placeholder="Enter Email" />
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  onChange={updateForm}
+                  value={form.email}
+                  name="email"
+                  required
+                />
                 <label> Message</label>
-                <textarea placeholder="Enter Message"></textarea>
-                <input type="button" value="Send" className="btn btn-primary" />
+                <textarea
+                  placeholder="Enter Message"
+                  onChange={updateForm}
+                  value={form.textarea}
+                  required
+                  name="textarea"
+                ></textarea>
+                <input type="submit" value="Send" className="btn btn-primary" />
               </form>
             </div>
           </div>

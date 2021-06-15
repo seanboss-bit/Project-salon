@@ -157,6 +157,7 @@ img {
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  overflow: hidden;
 }
 /* Footer */
 .footer {
@@ -208,6 +209,17 @@ img {
   .links4 .a {
     font-size: 0.9rem !important;
     margin: 0 15px !important;
+<<<<<<< HEAD:src/style.css
+=======
+  }
+}
+@media screen and (max-width: 768px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+  .header3 {
+    background-position: center;
+>>>>>>> sean:client/src/style.css
   }
 }
 @media screen and (max-width: 700px) {
@@ -222,6 +234,13 @@ img {
   .active {
     border: none;
   }
+  .button {
+    font-size: 0.7rem;
+  }
+  .about h2 {
+    font-size: 1rem;
+  }
+
   .grid-3 {
     grid-template-columns: 1fr;
     display: flex;
@@ -248,11 +267,15 @@ img {
   .links3 {
     height: 100vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
     position: fixed;
     top: 0;
     right: -110%;
+<<<<<<< HEAD:src/style.css
     padding: 80px 120px !important;
+=======
+    padding: 80px 120px;
+>>>>>>> sean:client/src/style.css
     z-index: 1001;
     transition: 0.3s linear;
   }
@@ -260,19 +283,28 @@ img {
     display: block;
     margin-left: 50%;
   }
+<<<<<<< HEAD:src/style.css
   .links3 a {
+=======
+  .links3 .a {
+>>>>>>> sean:client/src/style.css
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--secondary-colour);
     text-align: center;
   }
+<<<<<<< HEAD:src/style.css
   .links3.active {
+=======
+  .links3#activenow {
+>>>>>>> sean:client/src/style.css
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
+<<<<<<< HEAD:src/style.css
   .bars3.active span:nth-child(1) {
     transform: rotate(-45deg);
     top: 4px;
@@ -281,8 +313,23 @@ img {
     opacity: 0;
   }
   .bars3.active span:nth-child(3) {
+=======
+  .bars3#activeless span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+  .bars3#activeless span:nth-child(2) {
+    opacity: 0;
+  }
+  .bars3#activeless span:nth-child(3) {
+>>>>>>> sean:client/src/style.css
     transform: rotate(45deg);
     bottom: 14px;
+  }
+  .padding {
+    padding-top: 10px;
+    padding-left: 3px;
+    padding-right: 5px;
   }
 }
 @media screen and (max-width: 300px) {
@@ -290,5 +337,17 @@ img {
     padding-top: 10px;
     padding-left: 3px;
     padding-right: 5px;
+  }
+  .box-one {
+    font-size: 3rem;
+    height: 350px;
+  }
+  .links5,
+  .links1,
+  .links2,
+  .links3,
+  .links8,
+  .links4 {
+    padding: 80px 50px !important;
   }
 }

@@ -1,4 +1,4 @@
-import React , {useEffect}from "react";
+import React , {useEffect, useState}from "react";
 
 import { Link } from "react-router-dom";
 import Aos from 'aos'
@@ -8,6 +8,12 @@ const Home = () => {
   useEffect(() => {
     Aos.init({ duration: 1500})
   }, []);
+  // Toggle of NavBar
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
   return (
     <div>
       {/* Header */}
@@ -16,13 +22,18 @@ const Home = () => {
           <h1>
             <Link to="/">Project</Link>
           </h1>
+<<<<<<< HEAD:src/components/Home.js
           <div className="bars3">
+=======
+          <div className="bars3" id={toggle ? 'activeless' : ''}
+            onClick={handleClick}>
+>>>>>>> sean:client/src/components/Home.js
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <nav>
-            <ul className="links3">
+          <nav onClick={handleClick}>
+            <ul className="links3" id={toggle ? 'activenow' : ''}>
               <li>
                 <Link to="/" className="active3 a">
                   Home
@@ -41,10 +52,14 @@ const Home = () => {
                 <Link to="/spa" className='a'>Spa</Link>
               </li>
               <li>
+<<<<<<< HEAD:src/components/Home.js
                 <Link to="/booknow" target='_blank' className='a'>Book Now</Link>
               </li>
               <li>
                 <Link to="/book" target='_blank' className='a'>Book</Link>
+=======
+                <Link to="/booknow" target='_blank' className='a'>BookNow</Link>
+>>>>>>> sean:client/src/components/Home.js
               </li>
             </ul>
           </nav>
@@ -72,7 +87,7 @@ const Home = () => {
         <Link to="/services" className="box-one" data-aos="zoom-in">
           Treatment
         </Link>
-        <Link to="/booknow" className="box-one" data-aos="zoom-in">
+        <Link to="/booknow" target='_blank' className="box-one" data-aos="zoom-in">
           Book Now
         </Link>
         <Link to="/spa" className="box-one" data-aos="zoom-in">

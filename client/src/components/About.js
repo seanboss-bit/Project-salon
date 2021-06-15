@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import "../about.css";
 import { Link } from "react-router-dom";
 import people from "../images/people.jpg";
@@ -12,6 +13,10 @@ const About = () => {
     Aos.init({ duration: 1000 });
   }, []);
 
+<<<<<<< HEAD:src/components/About.js
+=======
+  // NavBar Open Close
+>>>>>>> sean:client/src/components/About.js
   const [toggle, setToggle] = useState(false);
 
   const handleClick = () => {
@@ -25,15 +30,25 @@ const About = () => {
             <Link to="/">Project</Link>
           </h1>
           <div
+<<<<<<< HEAD:src/components/About.js
             className={"bars1" + toggle ? null : ".activeless"}
+=======
+            className={"bars1"}
+            id={toggle ? "activeless" : ""}
+>>>>>>> sean:client/src/components/About.js
             onClick={handleClick}
           >
             <span></span>
             <span></span>
             <span></span>
           </div>
+<<<<<<< HEAD:src/components/About.js
           <nav>
             <ul className={"links1"}>
+=======
+          <nav onClick={handleClick}>
+            <ul className={"links1"} id={toggle ? "activenow" : ""}>
+>>>>>>> sean:client/src/components/About.js
               <li>
                 <Link to="/" className="a">
                   Home

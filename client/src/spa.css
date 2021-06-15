@@ -73,11 +73,12 @@ img {
   margin: 6px 0 !important;
   font-weight: 400 !important;
 }
-.service h2{
+
+.service2 h2{
   margin-bottom: 3rem;
   margin-top: 2rem;
 }
-.service p{
+.service2 p{
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -129,12 +130,21 @@ img {
   transition: 0.3s linear;
 }
 @media screen and (max-width: 1024px) {
+<<<<<<< HEAD:src/spa.css
   .links5,.links1,.links2,.links3,.links4 a {
     font-size: 0.9rem;
     margin: 0 15px;
   }
 }
 @media screen and (max-width: 700px) {
+=======
+ 
+}
+@media screen and (max-width: 700px) {
+  .showcase-text5 h3, .showcase-text5 p{
+    color: var(--secondary-colour);
+  }
+>>>>>>> sean:client/src/spa.css
   
   .active {
     border: none;
@@ -160,40 +170,59 @@ img {
   .links5 {
     height: 100vh;
     width: 100%;
-    background-color: rgba(10, 10, 10, 0.5) !important;
+    background-color: rgba(10, 10, 10, 0.85) !important;
     position: fixed;
     top: 0;
     right: -100%;
-    padding: 80px 120px !important;
+    padding: 80px 120px ;
     z-index: 1001;
-    transition: 0.3s linear;
+    transition: 0.4s linear;
   }
   .bars5 {
     display: block;
     margin-left: 50%;
   }
+<<<<<<< HEAD:src/spa.css
   .links5 a {
+=======
+  .links5 .a {
+>>>>>>> sean:client/src/spa.css
     display: block;
     font-size: 1.3rem !important;
     margin: 2rem 0 !important;
     color: var(--light-colour);
     text-align: center;
   }
+<<<<<<< HEAD:src/spa.css
   .links5.active {
+=======
+  .links5#activenow {
+>>>>>>> sean:client/src/spa.css
     right: 0;
     width: 100%;
     max-width: 740px;
     display: block;
   }
+<<<<<<< HEAD:src/spa.css
   .bars5.active span:nth-child(1) {
+=======
+  .bars5#activeless span:nth-child(1) {
+>>>>>>> sean:client/src/spa.css
     transform: rotate(-45deg);
     color: var(--light-colour) !important;
     top: 4px;
   }
+<<<<<<< HEAD:src/spa.css
   .bars5.active span:nth-child(2) {
     opacity: 0;
   }
   .bars5.active span:nth-child(3) {
+=======
+  .bars5#activeless span:nth-child(2) {
+    opacity: 0;
+  }
+  .bars5#activeless span:nth-child(3) {
+>>>>>>> sean:client/src/spa.css
     transform: rotate(45deg);
     bottom: 14px;
     color: var(--light-colour) !important;

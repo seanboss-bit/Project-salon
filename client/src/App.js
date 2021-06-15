@@ -16,8 +16,13 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Spa from "./components/Spa";
+<<<<<<< HEAD:src/App.js
 import BookNow from './components/BookNow'
 import Book from './components/Book'
+=======
+import Book from './components/Book'
+import Admin from './components/Admin'
+>>>>>>> sean:client/src/App.js
 
 function App() {
   return (
@@ -28,8 +33,13 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/services" component={Services} />
         <Route exact path="/spa" component={Spa} />
+<<<<<<< HEAD:src/App.js
         <Route exact path="/booknow" component={BookNow} />
         <Route exact path="/book" component={Book} />
+=======
+        <Route exact path="/booknow" component={Book} />
+        <Route exact path="/admin" component={Admin} />
+>>>>>>> sean:client/src/App.js
       </Switch>
     </Router>
   );
