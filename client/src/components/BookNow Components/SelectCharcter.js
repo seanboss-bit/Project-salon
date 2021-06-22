@@ -18,7 +18,7 @@ const SelectCharcter = ({ count, setCount , radio, handleChange}) => {
             <button
               className="btn btn-secondary"
               onClick={() => setCount(count + 1)}
-              disabled={(count > 3, radio === false)}
+              disabled={(count > 3 || radio === false)}
             >
               <i class="fas fa-arrow-right"></i>
             </button>

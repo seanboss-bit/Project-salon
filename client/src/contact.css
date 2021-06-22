@@ -17,8 +17,8 @@ img {
   box-sizing: border-box;
 }
 
-.active2 {
-  border-bottom: 2px solid var(--light-colour);
+.active {
+  border-bottom: 2px solid var(--secondary-colour) !important;
 }
 :root {
   --primary-colour: rgb(239, 170, 196);
@@ -29,7 +29,7 @@ img {
 }
 /* Header Section */
 .header2 {
-  height: 80vh;
+  height: 55vh;
   background-image: url(./images/stone.jpg);
   background-position: top;
   background-repeat: no-repeat;
@@ -42,19 +42,20 @@ img {
   padding: 0.6rem 0.3rem;
 }
 .header-inner2 h1 a {
-  color: var(--light-colour);
+  color: var(--secondary-colour);
 }
 .links8 {
   display: flex;
 }
 .links8 a {
   margin: 0 2rem;
-  color: var(--light-colour);
+  color: var(--secondary-colour);
   font-size: 1.3rem;
 }
 .showcase-text2 h3 {
   font-size: 4rem;
   margin-top: 5rem !important;
+  padding-top: 5rem;
   color: var(--light-colour);
 }
 

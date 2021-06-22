@@ -22,7 +22,7 @@ img {
 }
 /* Header Section */
 .header4 {
-  height: 80vh;
+  height: 55vh;
   background-image: url(./images/service2.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -35,19 +35,20 @@ img {
   padding: 0.6rem 0.3rem;
 }
 .header-inner4 h1 a {
-  color: var(--light-colour);
+  color: var(--secondary-colour);
 }
 .links4 {
   display: flex;
 }
 .links4 a {
   margin: 0 2rem;
-  color: var(--light-colour);
+  color: var(--secondary-colour);
   font-size: 1.3rem;
 }
 .showcase-text4 h3 {
   font-size: 4rem;
   margin-top: 5rem !important;
+  padding-top: 5rem;
   color: var(--light-colour);
 }
 

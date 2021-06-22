@@ -23,7 +23,7 @@ img {
 }
 /* Header Section */
 .header5 {
-  height: 80vh;
+  height: 55vh;
   background-image: url(./images/spaori.jpg);
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -48,6 +48,7 @@ img {
 }
 .showcase-text5 h3 {
   font-size: 4rem;
+  padding-top: 5rem;
   margin-top: 5rem !important;
   color: var(--light-colour);
 }

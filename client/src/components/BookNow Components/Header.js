@@ -31,16 +31,7 @@ const Header = ({ count, setCount, cart, total }) => {
               </div>
             </div>
             <div>
-              <h2 className="pt-3 pb-3 ">
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setCount(count - 1)}
-                  disabled={count < 2}
-                >
-                  <i class="fas fa-arrow-left"></i>
-                </button>
-                Select Service
-              </h2>
+              <h2 className="pt-3 pb-3 ">Select Service</h2>
             </div>
             <div className="navbar">
               <div onClick={handleClick}>
@@ -145,7 +136,7 @@ const Header = ({ count, setCount, cart, total }) => {
                       ))}
                     </div>
                   </div>
-                  <div className='responsive'>
+                  <div className="responsive">
                     <div className="sum">
                       <div>
                         <h4>Total</h4>

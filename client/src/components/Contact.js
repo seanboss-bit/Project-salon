@@ -17,58 +17,60 @@ const Contact = () => {
   });
 
   const updateForm = (e) => {
-    setForm({...form, [e.target.name]: e.target.value})
-  }
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   return (
     <div>
       <section className="header2">
-        <div className="container header-inner2">
-          <h1>
-            <Link to="/">Project</Link>
-          </h1>
-          <div
-            className="bars8"
-            id={toggle ? "activeless" : ""}
-            onClick={handleClick}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
+        <div className="header-inner33">
+          <div className="container header-inner2">
+            <h1>
+              <Link to="/">Project</Link>
+            </h1>
+            <div
+              className="bars8"
+              id={toggle ? "activeless" : ""}
+              onClick={handleClick}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav onClick={handleClick}>
+              <ul className="links8" id={toggle ? "activenow" : ""}>
+                <li>
+                  <Link to="/" className="a">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="a">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="active mt-3 a">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="a">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/spa" className="a">
+                    Spa
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/booknow" target="_blank" className="a">
+                    BookNow
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <nav onClick={handleClick}>
-            <ul className="links8" id={toggle ? "activenow" : ""}>
-              <li>
-                <Link to="/" className="a">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="a">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="active mt-3 a">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="a">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/spa" className="a">
-                  Spa
-                </Link>
-              </li>
-              <li>
-                <Link to="/booknow" target="_blank" className="a">
-                  BookNow
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
         <div className="container showcase-text2">
           <h3 className="mt-5 text-center">Contact</h3>
@@ -85,7 +87,6 @@ const Contact = () => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8165228117655!2d7.412250714276791!3d9.080473290682116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0af23ae85fbf%3A0xb5dd1256ac5db950!2sProjaro!5e0!3m2!1sen!2sng!4v1621628225564!5m2!1sen!2sng"
                 width="100%"
                 height="450"
-                allowfullscreen=""
                 loading="lazy"
               ></iframe>
             </div>

@@ -22,53 +22,55 @@ const About = () => {
   return (
     <div>
       <section className="header1">
-        <div className="container header-inner1">
-          <h1>
-            <Link to="/">Project</Link>
-          </h1>
-          <div
-            className={"bars1"}
-            id={toggle ? "activeless" : ""}
-            onClick={handleClick}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
+        <div className="header-inner32">
+          <div className="container header-inner1">
+            <h1>
+              <Link to="/">Project</Link>
+            </h1>
+            <div
+              className={"bars1"}
+              id={toggle ? "activeless" : ""}
+              onClick={handleClick}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav onClick={handleClick}>
+              <ul className={"links1"} id={toggle ? "activenow" : ""}>
+                <li>
+                  <Link to="/" className="a">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="active1 a">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="a">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="a">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/spa" className="a">
+                    Spa
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/booknow" target="_blank" className="a">
+                    Book Now
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <nav onClick={handleClick}>
-            <ul className={"links1"} id={toggle ? "activenow" : ""}>
-              <li>
-                <Link to="/" className="a">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="active1 a">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="a">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="a">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/spa" className="a">
-                  Spa
-                </Link>
-              </li>
-              <li>
-                <Link to="/booknow" target="_blank" className="a">
-                  Book Now
-                </Link>
-              </li>
-            </ul>
-          </nav>
         </div>
         <div className="container showcase-text1">
           <h3 className="mt-5 text-center">About Us</h3>
@@ -79,7 +81,7 @@ const About = () => {
         <div className="container">
           <div className="persons">
             <div data-aos="fade-right">
-              <h2>Head of</h2>
+              <h2>Head of Salon Main District</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Pariatur molestias, in quibusdam expedita sapiente officiis

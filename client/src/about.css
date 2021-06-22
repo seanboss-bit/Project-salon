@@ -15,7 +15,7 @@ img {
   box-sizing: border-box;
 }
 .active1 {
-  border-bottom: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--secondary-colour);
 }
 .active2 {
   border-bottom: 2px solid var(--secondary-colour);
@@ -29,7 +29,7 @@ img {
 }
 /* Header Section */
 .header1 {
-  height: 80vh;
+  height: 55vh;
   background-image: url(./images/about.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@ img {
   padding: 0.6rem 0.3rem;
 }
 .header-inner1 h1 a {
-  color: var(--light-colour);
+  color: var(--secondary-colour);
 }
 .links1 {
   display: flex;
@@ -50,12 +50,13 @@ img {
 }
 .links1 .a {
   margin: 0 2rem;
-  color: var(--light-colour);
+  color: var(--secondary-colour);
   font-size: 1.3rem;
 }
 .showcase-text1 h3 {
   font-size: 4rem;
   margin-top: 5rem !important;
+  padding-top: 5rem;
   color: var(--light-colour);
 }
 .showcase-text1 p {

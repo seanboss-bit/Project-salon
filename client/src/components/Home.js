@@ -1,12 +1,12 @@
-import React , {useEffect, useState}from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   useEffect(() => {
-    Aos.init({ duration: 1500})
+    Aos.init({ duration: 1500 });
   }, []);
   // Toggle of NavBar
   const [toggle, setToggle] = useState(false);
@@ -18,40 +18,55 @@ const Home = () => {
     <div>
       {/* Header */}
       <section className="header3">
-        <div className="container header-inner3">
-          <h1>
-            <Link to="/">Project</Link>
-          </h1>
-          <div className="bars3" id={toggle ? 'activeless' : ''}
-            onClick={handleClick}>
-            <span></span>
-            <span></span>
-            <span></span>
+        <div className="header-inner31">
+          <div className="container header-inner3">
+            <h1>
+              <Link to="/">Looks & Skin</Link>
+            </h1>
+            <div
+              className="bars3"
+              id={toggle ? "activeless" : ""}
+              onClick={handleClick}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav onClick={handleClick}>
+              <ul className="links3" id={toggle ? "activenow" : ""}>
+                <li>
+                  <Link to="/" className="active3 a">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="a">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="a">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="a">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/spa" className="a">
+                    Spa
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/booknow" target="_blank" className="a">
+                    BookNow
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <nav onClick={handleClick}>
-            <ul className="links3" id={toggle ? 'activenow' : ''}>
-              <li>
-                <Link to="/" className="active3 a">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className='a'>About Us</Link>
-              </li>
-              <li>
-                <Link to="/contact" className='a'>Contact</Link>
-              </li>
-              <li>
-                <Link to="/services" className='a'>Services</Link>
-              </li>
-              <li>
-                <Link to="/spa" className='a'>Spa</Link>
-              </li>
-              <li>
-                <Link to="/booknow" target='_blank' className='a'>BookNow</Link>
-              </li>
-            </ul>
-          </nav>
         </div>
         <div className="container showcase-text3">
           <h3 className="mt-5 text-center"></h3>
@@ -76,7 +91,12 @@ const Home = () => {
         <Link to="/services" className="box-one" data-aos="zoom-in">
           Treatment
         </Link>
-        <Link to="/booknow" target='_blank' className="box-one" data-aos="zoom-in">
+        <Link
+          to="/booknow"
+          target="_blank"
+          className="box-one"
+          data-aos="zoom-in"
+        >
           Book Now
         </Link>
         <Link to="/spa" className="box-one" data-aos="zoom-in">

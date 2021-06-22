@@ -22,7 +22,7 @@ img {
 }
 /* Header Section */
 .header3 {
-  height: 80vh;
+  height: 55vh;
   background-image: url(./images/showcase.jpg);
   background-position: center bottom left;
   background-repeat: no-repeat;
@@ -34,6 +34,17 @@ img {
   justify-content: space-between;
   padding: 0.6rem 0.3rem;
 }
+.header-inner31, .header-inner32, .header-inner33, .header-inner34, .header-inner35{
+  height: 12.2vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100000000;
+  width: 100%;
+}
+
 .header-inner3 h1 a {
   color: var(--secondary-colour);
 }
@@ -48,6 +59,7 @@ img {
 .showcase-text3 h3 {
   font-size: 4rem;
   margin-top: 5rem !important;
+  padding-top: 5rem;
   color: var(--secondary-colour);
 }
 .showcase-text3 h3::after {
