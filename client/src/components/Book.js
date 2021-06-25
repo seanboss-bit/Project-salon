@@ -6,6 +6,7 @@ import SelectCharacter from "./BookNow Components/SelectCharcter";
 import Login from "./BookNow Components/Login";
 import Payment from "./BookNow Components/Payment";
 import axios from "axios";
+import RingLoader from "react-spinners/RingLoader";
 
 const Book = () => {
   // For Login Page
@@ -19,7 +20,6 @@ const Book = () => {
     message: null,
     error: null,
   });
-
   const LoginUser = async (formData) => {
     try {
       const config = {
@@ -38,7 +38,7 @@ const Book = () => {
         ...loginInit,
         user: payLoad.user,
         message: payLoad.message,
-        loading: false,
+        loading: true,
       });
       alert(`Welcome ${payLoad.user.username}, ${payLoad.message}`);
       setLoginInit({ ...loginInit });
@@ -355,7 +355,7 @@ const Book = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
 
-  const submitTransaction = async (formData) => {
+  const submitTransaction = async () => {
     try {
       const response = await axios.post("http://localhost:5000/booking/admin", {
         name: login.username || register.username,
@@ -366,18 +366,20 @@ const Book = () => {
       alert(`${response.data.message}`);
     } catch (error) {
       const err = error.error;
-
     }
   };
+  const [loading, setLoading] = useState(false);
+
   return (
     <div>
       <div className="bodystyle">
         <form
           onSubmit={() => {
-            alert(`Thanks For Visiting`)
+            alert(`Thanks For Visiting`);
             submitTransaction();
           }}
         >
+          
           {count === 1 ? (
             <div>
               <Header

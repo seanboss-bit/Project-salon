@@ -8,6 +8,29 @@
     margin: 0 15px !important;
   }
 }
+.ring{
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinstyle{
+  width: 3rem;
+  height: 3rem;
+  animation-delay: 1s;
+}
+.spinstyle:nth-child(2){
+  animation-delay: 2s;
+}
+.spinstyle:nth-child(3){
+  animation-delay: 3s;
+}
+.spinstyle:nth-child(4){
+  animation-delay: 4s;
+}
+.spinstyle:nth-child(5){
+  animation-delay: 5s;
+}
 .loginheader{
   height: 15vh;
   display: flex;
