@@ -228,6 +228,14 @@ img {
   }
 }
 @media screen and (max-width: 768px) {
+  .header-inner1 h1 a, 
+  .header-inner2 h1 a,
+  .header-inner3 h1 a,
+  .header-inner4 h1 a,
+  .header-inner5 h1 a,
+  .header-inner6 h1 a {
+    padding-left: 8px;
+  }
   .header-inner31,
   .header-inner32,
   .header-inner33,
