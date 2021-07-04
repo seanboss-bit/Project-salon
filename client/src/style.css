@@ -34,7 +34,11 @@ img {
   justify-content: space-between;
   padding: 0.6rem 0.3rem;
 }
-.header-inner31, .header-inner32, .header-inner33, .header-inner34, .header-inner35{
+.header-inner31,
+.header-inner32,
+.header-inner33,
+.header-inner34,
+.header-inner35 {
   height: 12.2vh;
   background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
@@ -224,6 +228,33 @@ img {
   }
 }
 @media screen and (max-width: 768px) {
+  .header-inner31,
+  .header-inner32,
+  .header-inner33,
+  .header-inner34,
+  .header-inner35 {
+    height: 10vh;
+  }
+  .bars6 span,
+  .bars1 span,
+  .bars2 span,
+  .bars3 span,
+  .bars4 span,
+  .bars5 span,
+  .bars7 span,
+  .bars8 span {
+    background-color: var(--secondary-colour) !important;
+  }
+  .header6,
+  .header1,
+  .header2,
+  .header3,
+  .header4,
+  .header5,
+  .header7,
+  .header8 {
+    height: 40vh !important;
+  }
   .portfolio {
     grid-template-columns: 1fr;
   }

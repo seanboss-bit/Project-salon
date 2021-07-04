@@ -28,7 +28,7 @@ const About = () => {
               <Link to="/">Project</Link>
             </h1>
             <div
-              className={"bars1"}
+              className="bars1"
               id={toggle ? "activeless" : ""}
               onClick={handleClick}
             >

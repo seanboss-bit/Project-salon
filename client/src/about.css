@@ -135,7 +135,9 @@ img {
     font-size: 0.9rem;
     /* margin: 0 15px; */
   }
+  
 }
+
 @media screen and (max-width: 700px) {
   .header1,
   .header2,

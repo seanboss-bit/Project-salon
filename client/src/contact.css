@@ -162,7 +162,7 @@ img {
     text-align: center;
   }
   .active {
-    border: none;
+    border: none !important;
   }
   .links8 {
     height: 100vh;
