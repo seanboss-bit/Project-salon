@@ -366,9 +366,9 @@ const Book = () => {
       alert(`${response.data.message}`);
     } catch (error) {
       const err = error.error;
+      alert(err);
     }
   };
-  const [loading, setLoading] = useState(false);
 
   return (
     <div>
@@ -379,7 +379,6 @@ const Book = () => {
             submitTransaction();
           }}
         >
-          
           {count === 1 ? (
             <div>
               <Header
