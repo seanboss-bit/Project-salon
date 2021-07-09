@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import RingLoader from "react-spinners/RingLoader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = ({
   count,
@@ -24,7 +26,11 @@ const Login = ({
   };
   const submitButton = (e) => {
     if (login.password === "" || login.username === "") {
-      alert("Enter Required Fields");
+      toast.error("Enter Required Fields", {
+        className: "error-toast",
+        draggable: true,
+        position: toast.POSITION.TOP_CENTER,
+      });
     } else {
       const { username, password } = login;
       LoginUser({
@@ -39,7 +45,11 @@ const Login = ({
 
   const registerSubmit = (e) => {
     if (username === "" || password === "" || email === "") {
-      alert("Enter Required Fields");
+      toast.error("Enter Required Fields", {
+        className: "error-toast",
+        draggable: true,
+        position: toast.POSITION.TOP_CENTER,
+      });
     } else {
       registerUser({
         username,
@@ -52,6 +62,7 @@ const Login = ({
 
   return (
     <div>
+      <ToastContainer autoClose={1000}/>
       <div>
         <div className="container loginheader">
           <div className="logintop">

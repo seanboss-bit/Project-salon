@@ -188,7 +188,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 50px;
+  padding-top: 70px;
 }
 .adminheader {
   width: 100%;
@@ -302,9 +302,6 @@
   }
   .total {
     position: absolute;
-    /* margin-bottom: -1100px; */
-    /* width: 100%; */
-    /* bottom: 0px; */
     left: 30px;
     top: 0px;
     height: 60px;
@@ -320,9 +317,6 @@
     width: 100%;
     margin-bottom: 30px;
   }
-  .successbutton {
-    padding-top: 150px;
-  }
   .sum {
     display: flex;
     flex-direction: column;
@@ -333,13 +327,12 @@
   .sum h4 {
     display: none;
   }
-  .successbody,
-  .successbutton {
+  .successbody{
     height: 100vh;
   }
   .successbutton {
     height: 90vh !important;
-    margin-top: -180px;
+    margin-top: -350px;
   }
   .total {
     position: absolute;
