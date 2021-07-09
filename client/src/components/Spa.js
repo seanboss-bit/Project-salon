@@ -24,7 +24,7 @@ const Spa = () => {
         <div className="header-inner35">
           <div className="container header-inner5">
             <h1>
-              <Link to="/">Project</Link>
+              <Link to="/">Looks & Skin</Link>
             </h1>
             <div
               className="bars5"

@@ -25,7 +25,7 @@ const Contact = () => {
         <div className="header-inner33">
           <div className="container header-inner2">
             <h1>
-              <Link to="/">Project</Link>
+              <Link to="/">Looks & Skin</Link>
             </h1>
             <div
               className="bars8"

@@ -15,7 +15,7 @@ const Services = () => {
         <div className="header-inner34">
           <div className="container header-inner4">
             <h1>
-              <Link to="/">Project</Link>
+              <Link to="/">Looks & Skin</Link>
             </h1>
             <div
               className="bars4"

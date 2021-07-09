@@ -116,7 +116,7 @@ const Header = ({ count, setCount, cart, total }) => {
               <div className="total">
                 <div className="text-center totally">
                   <div className="words container">
-                    <h3>Project</h3>
+                    <h3>Looks & Skin</h3>
                     <p className="lead">Adress</p>
                   </div>
                   <div className="item">
