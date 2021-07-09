@@ -9,6 +9,8 @@ import axios from "axios";
 import RingLoader from "react-spinners/RingLoader";
 
 const Book = () => {
+  const [loading, setLoading] = useState(false);
+
   // For Login Page
   const [login, setLogin] = useState({
     username: "",
@@ -21,6 +23,7 @@ const Book = () => {
     error: null,
   });
   const LoginUser = async (formData) => {
+    setLoading(true);
     try {
       const config = {
         headers: {
@@ -34,21 +37,34 @@ const Book = () => {
         config
       );
       const payLoad = response.data;
+
       setLoginInit({
         ...loginInit,
         user: payLoad.user,
         message: payLoad.message,
-        loading: true,
       });
+
       alert(`Welcome ${payLoad.user.username}, ${payLoad.message}`);
       setLoginInit({ ...loginInit });
+
+      if (payLoad.message === "Login Successful") {
+        setTimeout(() => {
+          setLoading(false);
+        }, 4000);
+        setTimeout(() => {
+          setCount(count + 1);
+        }, 500);
+      }
     } catch (error) {
       const err = error.response.data.error;
       setLoginInit({
         ...loginInit,
         error: err,
       });
-      alert(loginInit.error);
+      setTimeout(() => {
+        setLoading(false);
+        alert(err);
+      }, 1000);
     }
   };
 
@@ -65,6 +81,7 @@ const Book = () => {
   });
 
   const registerUser = async (formData) => {
+    setLoading(true);
     try {
       const config = {
         headers: {
@@ -87,13 +104,24 @@ const Book = () => {
       });
       alert(`Welcome ${payLoad.data.username}, ${payLoad.message}`);
       setRegInit({ ...regInit });
+      if (payLoad.message === "You Have Been Registered Successfully") {
+        setTimeout(() => {
+          setLoading(false);
+        }, 4000);
+        setTimeout(() => {
+          setCount(count + 1);
+        }, 500);
+      }
     } catch (error) {
       const err = error.response.data.error;
       setRegInit({
         ...regInit,
         error: err,
       });
-      alert(regInit.error);
+      setTimeout(() => {
+        setLoading(false);
+        alert(err);
+      }, 1000); 
     }
   };
 
@@ -356,6 +384,7 @@ const Book = () => {
   }, [cart]);
 
   const submitTransaction = async () => {
+    setLoading(true)
     try {
       const response = await axios.post("http://localhost:5000/booking/admin", {
         name: login.username || register.username,
@@ -364,9 +393,20 @@ const Book = () => {
         price: total,
       });
       alert(`${response.data.message}`);
+      if(response.data.message === "Booking Completed Successfully"){
+        setTimeout(() => {
+          setLoading(false);
+        }, 4000);
+        setTimeout(() => {
+          setCount(count + 1);
+        }, 500);
+      }
     } catch (error) {
       const err = error.error;
-      alert(err);
+      setTimeout(() => {
+        setLoading(false);
+        alert(err);
+      }, 1000);
     }
   };
 
@@ -375,7 +415,6 @@ const Book = () => {
       <div className="bodystyle">
         <form
           onSubmit={() => {
-            alert(`Thanks For Visiting`);
             submitTransaction();
           }}
         >
@@ -412,6 +451,7 @@ const Book = () => {
           {count === 3 ? (
             <div>
               <Login
+                loading={loading}
                 count={count}
                 setCount={setCount}
                 login={login}
@@ -426,15 +466,23 @@ const Book = () => {
           ) : null}
           {count === 4 ? (
             <div>
-              <Payment
-                count={count}
-                setCount={setCount}
-                cart={cart}
-                total={total}
-                radio={radio}
-                login={login}
-                register={register}
-              />
+              {loading ? (
+                <div className="ring">
+                  <RingLoader loading={loading} size={150} color={"#333"} />
+                </div>
+              ) : (
+                <Payment
+                  count={count}
+                  setCount={setCount}
+                  cart={cart}
+                  total={total}
+                  radio={radio}
+                  login={login}
+                  register={register}
+                  loading={loading}
+                  setLoading={setLoading}
+                />
+              )}
             </div>
           ) : null}
           {count === 4 ? (

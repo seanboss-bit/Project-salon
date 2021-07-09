@@ -9,7 +9,7 @@ const Payment = ({ count, cart, total, radio, login, register }) => {
       <div className="success">
         <div className="container">
           <span>Step {count} Of 4</span>
-          <h4>Success</h4>
+          <h4>Order Summary</h4>
         </div>
       </div>
       <div className="page">
