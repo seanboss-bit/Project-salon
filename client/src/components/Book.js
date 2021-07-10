@@ -6,7 +6,6 @@ import SelectCharacter from "./BookNow Components/SelectCharcter";
 import Login from "./BookNow Components/Login";
 import Payment from "./BookNow Components/Payment";
 import axios from "axios";
-import RingLoader from "react-spinners/RingLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,7 +33,7 @@ const Book = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/user/login",
+        "http://looksndskin.herokuapp.com/user/login",
         formData,
         config
       );
@@ -100,7 +99,7 @@ const Book = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/user/register",
+        "http://looksndskin.herokuapp.com/user/register",
         formData,
         config
       );
@@ -410,12 +409,12 @@ const Book = () => {
         stylist: radio,
         price: total,
       });
-      toast.success(`${response.data.message}`, {
-        className: "error-toast",
-        draggable: true,
-        position: toast.POSITION.TOP_CENTER,
-      });
       if (response.data.message === "Booking Completed Successfully") {
+        toast.success(`${response.data.message}`, {
+          className: "error-toast",
+          draggable: true,
+          position: toast.POSITION.TOP_CENTER,
+        });
         setTimeout(() => {
           setLoading(false);
         }, 6000);

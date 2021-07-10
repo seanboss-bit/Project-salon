@@ -8,14 +8,34 @@ const Admin = () => {
   const [adminData, setAdminData] = useState([]);
 
   const getBooking = async () => {
+    setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/booking/admin");
+      const response = await axios.get(
+        "http://looksndskin.herokuapp.com/booking/admin"
+      );
       const bookings = response.data.data;
 
-      setAdminData( bookings, ...adminData);
+      setAdminData(bookings, ...adminData);
+      if (response.data.message === "Booking Done") {
+        setLoading(false);
+        toast.success(`${response.data.message}`, {
+          className: "error-toast",
+          draggable: true,
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
     } catch (error) {
-      const err = error.error;
-      console.log(err);
+      const err = error.response.data.error;
+      setTimeout(() => {
+        setTimeout(() => {
+          setLoading(false);
+          toast.error(err, {
+            className: "error-toast",
+            draggable: true,
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }, 4000);
+      });
     }
   };
   useEffect(() => {
