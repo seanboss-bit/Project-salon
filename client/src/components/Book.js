@@ -120,10 +120,10 @@ const Book = () => {
       if (payLoad.message === "You Have Been Registered Successfully") {
         setTimeout(() => {
           setLoading(false);
-        }, 4000);
+        }, 7000);
         setTimeout(() => {
           setCount(count + 1);
-        }, 500);
+        }, 4000);
       }
     } catch (error) {
       const err = error.response.data.error;
@@ -403,21 +403,19 @@ const Book = () => {
   const submitTransaction = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/booking/admin", {
-        name: login.username || register.username,
-        cart: cart.map((item) => item.label).toString(),
-        stylist: radio,
-        price: total,
-      });
-      if (response.data.message === "Booking Completed Successfully") {
-        toast.success(`${response.data.message}`, {
-          className: "error-toast",
-          draggable: true,
-          position: toast.POSITION.TOP_CENTER,
-        });
+      const response = await axios.post(
+        "http://looksndskin.herokuapp.com/booking/admin",
+        {
+          name: login.username || register.username,
+          cart: cart.map((item) => item.label).toString(),
+          stylist: radio,
+          price: total,
+        }
+      );
+      if (response.data.message === " Booking Completed Successfully") {
         setTimeout(() => {
           setLoading(false);
-        }, 6000);
+        }, 7000);
       }
     } catch (error) {
       const err = error.error;
@@ -438,9 +436,7 @@ const Book = () => {
       <div className="bodystyle">
         <form
           onSubmit={() => {
-            toast.success("Thanks For Visiting", {
-              position: toast.POSITION.TOP_CENTER,
-            });
+            alert("Thanks For Visiting");
             submitTransaction();
           }}
         >
