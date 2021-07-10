@@ -416,6 +416,11 @@ const Book = () => {
         setTimeout(() => {
           setLoading(false);
         }, 7000);
+        toast(`${response.data.message}`, {
+          className: "error-toast",
+          draggable: true,
+          position: toast.POSITION.TOP_CENTER,
+        });
       }
     } catch (error) {
       const err = error.error;
