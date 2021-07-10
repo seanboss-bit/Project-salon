@@ -40,7 +40,6 @@ const Admin = () => {
   };
   useEffect(() => {
     setLoading(true);
-
     setTimeout(() => {
       setLoading(false);
       getBooking();
