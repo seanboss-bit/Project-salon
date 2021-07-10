@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AdminContent from "./AdminContent";
 import axios from "axios";
 import RingLoader from "react-spinners/RingLoader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Admin = () => {
   const [loading, setLoading] = useState(false);
@@ -47,6 +49,7 @@ const Admin = () => {
   }, []);
   return (
     <div>
+      <ToastContainer autoClose={2500} />
       <div className="adminheader">
         <div className="container text-center">
           <h1>Admin</h1>
