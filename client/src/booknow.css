@@ -328,11 +328,7 @@
     display: none;
   }
   .successbody{
-    height: 100vh;
-  }
-  .successbutton {
-    height: 90vh !important;
-    margin-top: -350px;
+    height: auto;
   }
   .total {
     position: absolute;

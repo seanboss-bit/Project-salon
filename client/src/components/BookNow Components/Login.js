@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RingLoader from "react-spinners/RingLoader";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = ({
@@ -62,26 +62,6 @@ const Login = ({
 
   return (
     <div>
-      <ToastContainer autoClose={1000}/>
-      <div>
-        <div className="container loginheader">
-          <div className="logintop">
-            <span>
-              <button
-                className="btn btn-secondary"
-                onClick={() => setCount(count - 1)}
-                disabled={count < 2}
-              >
-                <i class="fas fa-arrow-left"></i>
-              </button>
-              Step {count} Of 4
-            </span>
-          </div>
-          <div className="logincontent">
-            <h1 className="p-5">Login Register</h1>
-          </div>
-        </div>
-      </div>
       {loading ? (
         <div className="rings">
           <RingLoader loading={loading} size={150} color={"#000"} />

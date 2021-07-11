@@ -6,6 +6,7 @@ import SelectCharacter from "./BookNow Components/SelectCharcter";
 import Login from "./BookNow Components/Login";
 import Payment from "./BookNow Components/Payment";
 import axios from "axios";
+import RingLoader from "react-spinners/RingLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -413,17 +414,15 @@ const Book = () => {
         }
       );
       if (response.data.message === " Booking Completed Successfully") {
-        setTimeout(() => {
-          setLoading(false);
-        }, 7000);
-        toast(`${response.data.message}`, {
+        toast.success(`${response.data.message}`, {
           className: "error-toast",
           draggable: true,
           position: toast.POSITION.TOP_CENTER,
         });
+        count = 2;
       }
     } catch (error) {
-      const err = error.error;
+      const err = error.response.data.error;
       setTimeout(() => {
         setLoading(false);
         toast.error(err, {
@@ -437,15 +436,32 @@ const Book = () => {
 
   return (
     <div>
-      <ToastContainer autoClose={2500} />
       <div className="bodystyle">
+      <ToastContainer autoClose={2500} />
         <form
           onSubmit={() => {
+            setLoading(true);
             alert("Thanks For Visiting");
             submitTransaction();
           }}
         >
           {count === 1 ? (
+            <div>
+              <Login
+                loading={loading}
+                count={count}
+                setCount={setCount}
+                login={login}
+                setLogin={setLogin}
+                register={register}
+                setRegister={setRegister}
+                registerUser={registerUser}
+                LoginUser={LoginUser}
+                loginInit={loginInit}
+              />
+            </div>
+          ) : null}
+          {count === 2 ? (
             <div>
               <Header
                 count={count}
@@ -467,7 +483,7 @@ const Book = () => {
               />
             </div>
           ) : null}
-          {count === 2 ? (
+          {count === 3 ? (
             <SelectCharacter
               count={count}
               setCount={setCount}
@@ -475,52 +491,41 @@ const Book = () => {
               handleChange={handleChange}
             />
           ) : null}
-          {count === 3 ? (
-            <div>
-              <Login
-                loading={loading}
-                count={count}
-                setCount={setCount}
-                login={login}
-                setLogin={setLogin}
-                register={register}
-                setRegister={setRegister}
-                registerUser={registerUser}
-                LoginUser={LoginUser}
-                loginInit={loginInit}
-              />
-            </div>
-          ) : null}
           {count === 4 ? (
-            <div>
-              <Payment
-                count={count}
-                setCount={setCount}
-                cart={cart}
-                total={total}
-                radio={radio}
-                login={login}
-                register={register}
-                loading={loading}
-                setLoading={setLoading}
-              />
-            </div>
-          ) : null}
-          {count === 4 ? (
-            <div className="successbutton">
-              <button
-                className="btn btn-secondary"
-                onClick={() => setCount(count - 1)}
-                disabled={count < 2}
-              >
-                Back
-              </button>
-              <input
-                type="submit"
-                className="btn btn-secondary"
-                value="Submit"
-              />
-            </div>
+            loading ? (
+              <div className="rings">
+                <RingLoader loading={loading} size={150} color={"#000"} />
+              </div>
+            ) : (
+              <div>
+                <Payment
+                  loading={loading}
+                  count={count}
+                  setCount={setCount}
+                  cart={cart}
+                  total={total}
+                  radio={radio}
+                  login={login}
+                  register={register}
+                  loading={loading}
+                  setLoading={setLoading}
+                />
+                <div className="successbutton">
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => setCount(count - 1)}
+                    disabled={count < 2}
+                  >
+                    Back
+                  </button>
+                  <input
+                    type="submit"
+                    className="btn btn-secondary"
+                    value="Submit"
+                  />
+                </div>
+              </div>
+            )
           ) : null}
         </form>
       </div>
