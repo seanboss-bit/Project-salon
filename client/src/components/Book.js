@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import Header from "./BookNow Components/Header";
 import Service from "./BookNow Components/Service";
@@ -413,36 +414,35 @@ const Book = () => {
           price: total,
         }
       );
-      if (response.data.message === " Booking Completed Successfully") {
-        toast.success(`${response.data.message}`, {
-          className: "error-toast",
-          draggable: true,
-          position: toast.POSITION.TOP_CENTER,
-        });
-        count = 2;
-      }
-    } catch (error) {
-      const err = error.response.data.error;
+      const payload = response.data;
+      alert(`${payload.message}`)
       setTimeout(() => {
-        setLoading(false);
-        toast.error(err, {
-          className: "error-toast",
-          draggable: true,
-          position: toast.POSITION.TOP_CENTER,
-        });
+        if (payload.message === "Booking Completed Successfully") {
+          toast.success(`${payload.message}`, {
+            className: "error-toast",
+            draggable: true,
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }
       }, 4000);
+    } catch (error) {
+      setLoading(true);
+      const err = error.response.error;
+      alert(err)
     }
   };
 
+  let history = useHistory();
   return (
     <div>
-      <div className="bodystyle">
       <ToastContainer autoClose={2500} />
+      <div className="bodystyle">
         <form
           onSubmit={() => {
+            submitTransaction();
             setLoading(true);
             alert("Thanks For Visiting");
-            submitTransaction();
+            history.push("/");
           }}
         >
           {count === 1 ? (
@@ -497,7 +497,7 @@ const Book = () => {
                 <RingLoader loading={loading} size={150} color={"#000"} />
               </div>
             ) : (
-              <div>
+              <div className="successbody">
                 <Payment
                   loading={loading}
                   count={count}
@@ -507,7 +507,6 @@ const Book = () => {
                   radio={radio}
                   login={login}
                   register={register}
-                  loading={loading}
                   setLoading={setLoading}
                 />
                 <div className="successbutton">

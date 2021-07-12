@@ -1,6 +1,4 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Payment = ({
   count,
@@ -9,14 +7,12 @@ const Payment = ({
   radio,
   login,
   register,
-  setCount,
 }) => {
   let appoint = new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000);
 
   let user = login.username || register.username;
   return (
     <div className="successbody">
-      <ToastContainer autoClose={2500} />
       <div>
         <div className="success">
           <div className="container">
@@ -33,7 +29,7 @@ const Payment = ({
               <h5>
                 Services Selected: {cart.map((item) => item.label).toString()}
               </h5>
-              <h5>Date of Booking: {Date()}</h5>
+              <h5>Date of Booking: {}</h5>
               <h5>Total Amount: ${total}</h5>
               <h5>AppointMent Date: {appoint.toString()}</h5>
               <h5>Stylist: {radio}</h5>
