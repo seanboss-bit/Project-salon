@@ -16,7 +16,12 @@ img {
 * {
   box-sizing: border-box;
 }
-
+.rin {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .active {
   border-bottom: 2px solid var(--secondary-colour) !important;
 }
@@ -96,11 +101,11 @@ img {
   padding: 0.5rem 0.3rem;
   margin: 1rem 0;
   border: none;
- border-bottom: 1px solid var(--dark-colour); 
+  border-bottom: 1px solid var(--dark-colour);
 }
 .form input[type="text"],
 .form input[type="email"],
-.form textarea:focus{
+.form textarea:focus {
   outline: none;
 }
 .form label {
@@ -203,12 +208,11 @@ img {
     transform: rotate(45deg);
     bottom: 14px;
   }
-  .form input[type="submit"]{
+  .form input[type="submit"] {
     width: 100%;
     text-align: center;
     margin: 0 !important;
   }
- 
 }
 @media screen and (max-width: 1024px) {
   .links8 a {

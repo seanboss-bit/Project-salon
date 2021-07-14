@@ -7,6 +7,20 @@
   --light-colour: #fff;
   --shadow: 0 1px 5px #757575b3;
 }
+.adminbtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-admin {
+  background: #a8d5e2;
+  color: #104911;
+}
+.btn-admin:focus {
+  color: var(--light-colour);
+  outline: none !important;
+}
 * {
   font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 }
@@ -23,7 +37,6 @@
 }
 .bodystyle {
   background-color: #dddddd;
-  /* height: 100vh; */
 }
 .unilink {
   background-color: var(--light-colour);
@@ -56,7 +69,7 @@
   padding: 1.3rem 0.8rem;
   border-radius: 10px;
 }
-.sean{
+.sean {
   text-transform: uppercase;
 }
 .totally {
@@ -90,12 +103,6 @@
   box-shadow: var(--shadow);
   transition: 2s ease;
 }
-/* .option1:nth-child(1){
-    border-radius: 20px 20px 0px 0px;
-}
-.option1:last-child{
-    border-radius: 0px 0px 20px 20px;
-} */
 .service {
   display: grid;
   grid-template-columns: 1fr 9fr;
@@ -181,7 +188,7 @@
   color: white;
 }
 .successbody {
-  height: 100vh;
+  height: auto;
 }
 .successbutton {
   height: 40vh;
@@ -191,10 +198,15 @@
   padding-top: 70px;
 }
 .adminheader {
+  position: fixed;
+  top: 0;
   width: 100%;
   background-color: #104911;
   color: #a8d5e2;
   padding: 1.5rem;
+}
+.adminshowcase {
+  margin-top: 130px;
 }
 .bookone {
   padding: 1.3rem 1rem;
@@ -327,7 +339,7 @@
   .sum h4 {
     display: none;
   }
-  .successbody{
+  .successbody {
     height: auto;
   }
   .total {

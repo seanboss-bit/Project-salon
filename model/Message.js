@@ -7,11 +7,15 @@ const MessageSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    required: [true, " Please Enter Email"],
   },
   message: {
     type: String,
+    required: [true, " Please Fill out This Field"],
+  },
+  dateOfPost: {
+    type: Date,
+    default: Date.now,
   },
   postedBy: {
     type: mongoose.Schema.ObjectId,
