@@ -1,6 +1,6 @@
 import "./App.css";
 import "./bootstrap.css";
-
+import "./paystack.css"
 import "./contact.css";
 import "./style.css";
 import "./services.css";
@@ -14,6 +14,7 @@ import Services from "./components/Services";
 import Spa from "./components/Spa";
 import Book from "./components/Book";
 import Admin from "./components/Admin";
+import PayStack from "./components/PayStack";
 
 function App() {
   return (

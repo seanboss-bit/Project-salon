@@ -29,7 +29,7 @@ const Payment = ({
               <h5>
                 Services Selected: {cart.map((item) => item.label).toString()}
               </h5>
-              <h5>Date of Booking: {}</h5>
+              <h5>Date of Booking: {Date()}</h5>
               <h5>Total Amount: ${total}</h5>
               <h5>AppointMent Date: {appoint.toString()}</h5>
               <h5>Stylist: {radio}</h5>

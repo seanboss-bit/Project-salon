@@ -10,10 +10,13 @@ import axios from "axios";
 import RingLoader from "react-spinners/RingLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PayStack from "./PayStack";
 
 const Book = () => {
+  // utils State
   const [loading, setLoading] = useState(false);
-
+  let history = useHistory();
+  const [email, setEmail] = useState("");
   // For Login Page
   const [login, setLogin] = useState({
     username: "",
@@ -415,31 +418,46 @@ const Book = () => {
         }
       );
       const payload = response.data;
-      alert(`${payload.message}`)
-      setTimeout(() => {
-        if (payload.message === "Booking Completed Successfully") {
-          toast.success(`${payload.message}`, {
-            className: "error-toast",
-            draggable: true,
-            position: toast.POSITION.TOP_CENTER,
-          });
-        }
-      }, 4000);
+      alert(`${payload.message}`);
+      toast.success(`${payload.message}`, {
+        className: "error-toast",
+        draggable: true,
+        position: toast.POSITION.TOP_CENTER,
+      });
     } catch (error) {
       setLoading(true);
       const err = error.response.error;
-      alert(err)
+      alert(err);
     }
   };
 
-  let history = useHistory();
+  const SECRET_KEY = "sk_test_f7167ca3149bc35035880e2d0ec801e18a284631";
+
+  const publicKey = "pk_test_f4f31b55e88c373eb73ba5e042f8c330c3e8c415";
+
+  let amount = total;
+
+  const componentProp = {
+    email,
+    amount,
+    metadata: {
+      name: login.username || register.username,
+      phone: "09056760660",
+    },
+    publicKey,
+    text: "Pay Now",
+    onSuccess: () => {
+      submitTransaction();
+      toast.success("Thanks for doing business with us! Come back soon!!");
+    },
+    onClose: () => toast.error("Wait! Don't leave :("),
+  };
   return (
     <div>
       <ToastContainer autoClose={2500} />
       <div className="bodystyle">
         <form
           onSubmit={() => {
-            submitTransaction();
             setLoading(true);
             alert("Thanks For Visiting");
             history.push("/");
@@ -517,14 +535,30 @@ const Book = () => {
                   >
                     Back
                   </button>
-                  <input
-                    type="submit"
+                  <button
                     className="btn btn-secondary"
-                    value="Submit"
-                  />
+                    onClick={() => setCount(count + 1)}
+                    disabled={count > 6}
+                  >
+                    On-to Payment
+                  </button>
                 </div>
               </div>
             )
+          ) : null}
+          {count === 5 ? (
+            <div>
+              <PayStack
+                login={login}
+                setLogin={setLogin}
+                register={register}
+                setRegister={setRegister}
+                total={total}
+                componentProp={componentProp}
+                email={email}
+                setEmail={setEmail}
+              />
+            </div>
           ) : null}
         </form>
       </div>

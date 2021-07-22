@@ -13,10 +13,6 @@ const AdminContent = ({ admin }) => {
           <h3>Total Price: ${admin.price}</h3>
           <h5>Date OF Booking: {admin.dateofreg}</h5>
           <h5>AppointMent Date: {appoint.toString()}</h5>
-          <p>Message: {admin.message}</p>
-          <button className="btn btn-danger text-center but">
-            Remove Booking
-          </button>
         </div>
       </div>
     </div>
